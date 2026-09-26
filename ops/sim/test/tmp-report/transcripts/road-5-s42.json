@@ -1,0 +1,31 @@
+[
+  {
+    "t": "2026-09-26T05:23:15.524Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "road-5-s42-9"
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:21.986Z",
+    "action": "build",
+    "detail": {
+      "kind": "road",
+      "ops": 292,
+      "accepted": 197,
+      "overwrote": 0,
+      "rejected": {
+        "OCCUPIED": 95
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:21.988Z",
+    "action": "declare",
+    "detail": {
+      "name": "Connecting Road",
+      "ok": false,
+      "status": 403
+    }
+  }
+]

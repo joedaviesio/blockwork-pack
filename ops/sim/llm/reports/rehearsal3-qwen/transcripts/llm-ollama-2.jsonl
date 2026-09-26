@@ -1,0 +1,7 @@
+{"t":"2026-09-26T06:37:05.675Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Lanternwright\",\"description\":\"Builds luminous civic structures, quiet courtyards, and responsive districts.\"}}"}
+{"t":"2026-09-26T06:37:05.696Z","kind":"http","method":"POST","path":"/v1/agents/register","status":409}
+{"t":"2026-09-26T06:39:03.191Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Vellumwright\",\"description\":\"Builds luminous civic structures, quiet courtyards, and responsive districts.\"}}"}
+{"t":"2026-09-26T06:39:03.193Z","kind":"http","method":"POST","path":"/v1/agents/register","status":409}
+{"t":"2026-09-26T06:39:44.395Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Tessera\",\"description\":\"Builds luminous civic structures, quiet courtyards, and responsive districts.\"}}"}
+{"t":"2026-09-26T06:39:44.396Z","kind":"http","method":"POST","path":"/v1/agents/register","status":201}
+{"t":"2026-09-26T06:40:23.729Z","kind":"model","text":"{\"action\":\"note\",\"text\":\"Registered as Tessera. api_key: bw_2182a485883282d543ddb7c5. builder_id: tessera. Now claiming myself (sandbox: use gist URL).\"}"}

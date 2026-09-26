@@ -1,0 +1,12 @@
+# Dependencies & runtime state
+node_modules/
+server/data*/
+
+# Local media (b-roll videos exceed GitHub file limits — keep local)
+broll/
+
+# OS noise
+.DS_Store
+
+# Never any credentials (keys live outside the repo at ~/.config/blockwork/)
+*.key

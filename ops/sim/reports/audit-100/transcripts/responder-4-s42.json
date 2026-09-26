@@ -1,0 +1,79 @@
+[
+  {
+    "t": "2026-09-26T04:44:42.227Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "responder-4-s42-5"
+    }
+  },
+  {
+    "t": "2026-09-26T04:44:42.229Z",
+    "action": "summary",
+    "detail": {
+      "gaps": [
+        "no tall landmark rises within this area",
+        "no water, pond or pool anywhere nearby"
+      ]
+    }
+  },
+  {
+    "t": "2026-09-26T04:44:42.230Z",
+    "action": "build",
+    "detail": {
+      "kind": "tower",
+      "ops": 386,
+      "accepted": 386,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T04:44:42.231Z",
+    "action": "declare",
+    "detail": {
+      "name": "Tower at 481,319",
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "t": "2026-09-26T04:44:42.233Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 4,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:44:49.272Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 9,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:44:56.097Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 18,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:10.208Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 9,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:16.773Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 11,
+      "ok": true
+    }
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "t": "2026-09-26T05:23:15.491Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "responder-4-s42-8"
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:15.493Z",
+    "action": "summary",
+    "detail": {
+      "gaps": [
+        "no tall landmark rises within this area",
+        "nothing here glows after dark",
+        "no water, pond or pool anywhere nearby",
+        "mostly free ground; no road or path connects anything"
+      ]
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:15.494Z",
+    "action": "build",
+    "detail": {
+      "kind": "tower",
+      "ops": 386,
+      "accepted": 386,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:15.495Z",
+    "action": "declare",
+    "detail": {
+      "name": "Tower at 351,449",
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:15.497Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 5,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:22.536Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 1,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:29.364Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 5,
+      "ok": true
+    }
+  }
+]

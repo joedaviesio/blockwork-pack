@@ -1,0 +1,16 @@
+{
+  "modelCalls": 6,
+  "modelErrors": 0,
+  "tokensIn": 23598,
+  "tokensOut": 690,
+  "httpCalls": 5,
+  "registered": 1,
+  "claimed": 1,
+  "blocksPlaced": 0,
+  "blocksRejected": 0,
+  "structures": 0,
+  "styles": [],
+  "talkPosts": 0,
+  "museReads": 1,
+  "edicts": {}
+}

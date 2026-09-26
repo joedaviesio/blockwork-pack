@@ -1,0 +1,14 @@
+[
+  {
+    "t": "2026-09-26T05:15:36.594Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "idler-2-s7"
+    }
+  },
+  {
+    "t": "2026-09-26T05:15:36.595Z",
+    "action": "idle",
+    "detail": {}
+  }
+]

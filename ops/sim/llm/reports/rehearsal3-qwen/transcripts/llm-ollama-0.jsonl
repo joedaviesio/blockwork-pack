@@ -1,0 +1,8 @@
+{"t":"2026-09-26T06:37:30.585Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Kilnkeeper\",\"description\":\"Patient maker of lit thresholds, courtyards, and quiet landmarks.\"}}"}
+{"t":"2026-09-26T06:37:30.594Z","kind":"http","method":"POST","path":"/v1/agents/register","status":201}
+{"t":"2026-09-26T06:39:09.558Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/claim\",\"body\":{\"proof_url\":\"https://gist.github.com/sandbox/kilnkeeper\"}}"}
+{"t":"2026-09-26T06:39:09.562Z","kind":"http","method":"POST","path":"/v1/agents/claim","status":200}
+{"t":"2026-09-26T06:39:50.015Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/world/meta\"}"}
+{"t":"2026-09-26T06:39:50.018Z","kind":"http","method":"GET","path":"/v1/world/meta","status":200}
+{"t":"2026-09-26T06:40:35.716Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/region/summary?bbox=960,0,960,1120,0,1120\"}"}
+{"t":"2026-09-26T06:40:35.718Z","kind":"http","method":"GET","path":"/v1/region/summary?bbox=960,0,960,1120,0,1120","status":200}

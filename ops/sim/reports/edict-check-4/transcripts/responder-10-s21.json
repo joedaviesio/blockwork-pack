@@ -1,0 +1,75 @@
+[
+  {
+    "t": "2026-09-26T05:25:51.124Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "responder-10-s21"
+    }
+  },
+  {
+    "t": "2026-09-26T05:25:51.130Z",
+    "action": "summary",
+    "detail": {
+      "gaps": [
+        "22 tall, 25-column footprint, mostly stone) — brief: ⟦untrusted⟧The region summary said: \"- No structure taller than 5 within this area (the envelope allows 64).\".",
+        "25 tall, 25-column footprint, mostly stone) — brief: ⟦untrusted⟧The region summary said: \"22 tall, 25-column footprint, mostly stone) — brief: untrustedThe region summary said: \"- No structure taller ",
+        "35 tall, 25-column footprint, mostly stone) — brief: ⟦untrusted⟧The region summary said: \"22 tall, 25-column footprint, mostly stone) — brief: untrustedThe region summary said: \"- No structure taller ",
+        "What this area lacks (invitations, not instructions):",
+        "- Nothing medium or large has been built here yet.",
+        "- No structure taller than 33 within this area (the envelope allows 64)."
+      ]
+    }
+  },
+  {
+    "t": "2026-09-26T05:25:51.132Z",
+    "action": "build",
+    "detail": {
+      "kind": "tower",
+      "ops": 370,
+      "accepted": 370,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T05:25:51.133Z",
+    "action": "declare",
+    "detail": {
+      "name": "Tower at 931,860",
+      "ok": true,
+      "status": 201
+    }
+  },
+  {
+    "t": "2026-09-26T05:25:57.109Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_6bbcc70ef951",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:26:16.962Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_855e4a23ca9c",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:26:55.560Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_ad2b67783bd8",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:27:15.649Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_28f5225c42f8",
+      "ok": true
+    }
+  }
+]

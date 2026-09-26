@@ -1,0 +1,891 @@
+{
+  "opts": {
+    "bots": 100,
+    "base": "http://localhost:8111",
+    "seed": 7,
+    "minutes": 4,
+    "smoke": false,
+    "area": null,
+    "out": "reports/final-100-era2"
+  },
+  "area": [
+    768,
+    768,
+    1280,
+    1280
+  ],
+  "materials": [
+    "stone",
+    "dirt",
+    "grass",
+    "water",
+    "wood",
+    "leaves",
+    "glass",
+    "metal",
+    "light",
+    "obsidian",
+    "snow",
+    "brick",
+    "gold",
+    "moss"
+  ],
+  "summary": {
+    "run": {
+      "seconds": 240,
+      "bots": 100,
+      "requests": 10232,
+      "errors": 163,
+      "retries": 159,
+      "rps": 42.6
+    },
+    "onboarding": {
+      "registered": 100,
+      "registerFailed": 0,
+      "claimed": 95,
+      "claimFailed": 0
+    },
+    "building": {
+      "blocksAccepted": 29206,
+      "blocksRejected": 12154,
+      "overwrites": 1170,
+      "rejectsByReason": {
+        "UNKNOWN": 331,
+        "exceeds height envelope (max 64 above terrain)": 1099,
+        "cell occupied (protect_existing)": 9554,
+        "outside habitable territory": 1170
+      },
+      "edictCodesSeen": {},
+      "buildCalls": 1724
+    },
+    "social": {
+      "structuresDeclared": 70,
+      "declareRejected": 8,
+      "distinctStyles": 11,
+      "talkPosts": 1752,
+      "talkUnsupported": 0,
+      "inboxChecks": 3693,
+      "summaryReads": 23
+    },
+    "thesis": {
+      "responderGapHit": 22,
+      "responderGapMiss": 1,
+      "gapResponseRate": 0.96
+    },
+    "personas": {
+      "responder": 23,
+      "idler": 7,
+      "styleFounder": 11,
+      "road": 7,
+      "tower": 6,
+      "decorator": 11,
+      "copycat": 8,
+      "cottage": 12,
+      "vandal": 2,
+      "edictProber": 7,
+      "chatterbox": 6
+    }
+  },
+  "assignments": [
+    {
+      "i": 0,
+      "persona": "responder",
+      "home": {
+        "x": 794,
+        "z": 797
+      }
+    },
+    {
+      "i": 1,
+      "persona": "responder",
+      "home": {
+        "x": 844,
+        "z": 794
+      }
+    },
+    {
+      "i": 2,
+      "persona": "idler",
+      "home": {
+        "x": 892,
+        "z": 788
+      }
+    },
+    {
+      "i": 3,
+      "persona": "styleFounder",
+      "home": {
+        "x": 947,
+        "z": 798
+      }
+    },
+    {
+      "i": 4,
+      "persona": "road",
+      "home": {
+        "x": 998,
+        "z": 792
+      }
+    },
+    {
+      "i": 5,
+      "persona": "tower",
+      "home": {
+        "x": 1055,
+        "z": 800
+      }
+    },
+    {
+      "i": 6,
+      "persona": "road",
+      "home": {
+        "x": 1096,
+        "z": 791
+      }
+    },
+    {
+      "i": 7,
+      "persona": "responder",
+      "home": {
+        "x": 1158,
+        "z": 794
+      }
+    },
+    {
+      "i": 8,
+      "persona": "decorator",
+      "home": {
+        "x": 1201,
+        "z": 792
+      }
+    },
+    {
+      "i": 9,
+      "persona": "copycat",
+      "home": {
+        "x": 1258,
+        "z": 800
+      }
+    },
+    {
+      "i": 10,
+      "persona": "cottage",
+      "home": {
+        "x": 794,
+        "z": 843
+      }
+    },
+    {
+      "i": 11,
+      "persona": "responder",
+      "home": {
+        "x": 851,
+        "z": 850
+      }
+    },
+    {
+      "i": 12,
+      "persona": "copycat",
+      "home": {
+        "x": 897,
+        "z": 845
+      }
+    },
+    {
+      "i": 13,
+      "persona": "road",
+      "home": {
+        "x": 952,
+        "z": 846
+      }
+    },
+    {
+      "i": 14,
+      "persona": "responder",
+      "home": {
+        "x": 997,
+        "z": 845
+      }
+    },
+    {
+      "i": 15,
+      "persona": "tower",
+      "home": {
+        "x": 1047,
+        "z": 844
+      }
+    },
+    {
+      "i": 16,
+      "persona": "cottage",
+      "home": {
+        "x": 1101,
+        "z": 848
+      }
+    },
+    {
+      "i": 17,
+      "persona": "road",
+      "home": {
+        "x": 1158,
+        "z": 846
+      }
+    },
+    {
+      "i": 18,
+      "persona": "cottage",
+      "home": {
+        "x": 1206,
+        "z": 841
+      }
+    },
+    {
+      "i": 19,
+      "persona": "idler",
+      "home": {
+        "x": 1252,
+        "z": 850
+      }
+    },
+    {
+      "i": 20,
+      "persona": "cottage",
+      "home": {
+        "x": 790,
+        "z": 901
+      }
+    },
+    {
+      "i": 21,
+      "persona": "vandal",
+      "home": {
+        "x": 847,
+        "z": 895
+      }
+    },
+    {
+      "i": 22,
+      "persona": "responder",
+      "home": {
+        "x": 902,
+        "z": 896
+      }
+    },
+    {
+      "i": 23,
+      "persona": "responder",
+      "home": {
+        "x": 945,
+        "z": 898
+      }
+    },
+    {
+      "i": 24,
+      "persona": "responder",
+      "home": {
+        "x": 1000,
+        "z": 897
+      }
+    },
+    {
+      "i": 25,
+      "persona": "cottage",
+      "home": {
+        "x": 1046,
+        "z": 901
+      }
+    },
+    {
+      "i": 26,
+      "persona": "decorator",
+      "home": {
+        "x": 1104,
+        "z": 890
+      }
+    },
+    {
+      "i": 27,
+      "persona": "copycat",
+      "home": {
+        "x": 1152,
+        "z": 899
+      }
+    },
+    {
+      "i": 28,
+      "persona": "responder",
+      "home": {
+        "x": 1209,
+        "z": 895
+      }
+    },
+    {
+      "i": 29,
+      "persona": "edictProber",
+      "home": {
+        "x": 1259,
+        "z": 891
+      }
+    },
+    {
+      "i": 30,
+      "persona": "decorator",
+      "home": {
+        "x": 795,
+        "z": 941
+      }
+    },
+    {
+      "i": 31,
+      "persona": "styleFounder",
+      "home": {
+        "x": 842,
+        "z": 944
+      }
+    },
+    {
+      "i": 32,
+      "persona": "styleFounder",
+      "home": {
+        "x": 898,
+        "z": 949
+      }
+    },
+    {
+      "i": 33,
+      "persona": "idler",
+      "home": {
+        "x": 949,
+        "z": 947
+      }
+    },
+    {
+      "i": 34,
+      "persona": "styleFounder",
+      "home": {
+        "x": 998,
+        "z": 943
+      }
+    },
+    {
+      "i": 35,
+      "persona": "edictProber",
+      "home": {
+        "x": 1044,
+        "z": 949
+      }
+    },
+    {
+      "i": 36,
+      "persona": "chatterbox",
+      "home": {
+        "x": 1097,
+        "z": 945
+      }
+    },
+    {
+      "i": 37,
+      "persona": "responder",
+      "home": {
+        "x": 1152,
+        "z": 946
+      }
+    },
+    {
+      "i": 38,
+      "persona": "responder",
+      "home": {
+        "x": 1207,
+        "z": 949
+      }
+    },
+    {
+      "i": 39,
+      "persona": "cottage",
+      "home": {
+        "x": 1249,
+        "z": 950
+      }
+    },
+    {
+      "i": 40,
+      "persona": "tower",
+      "home": {
+        "x": 796,
+        "z": 997
+      }
+    },
+    {
+      "i": 41,
+      "persona": "responder",
+      "home": {
+        "x": 844,
+        "z": 993
+      }
+    },
+    {
+      "i": 42,
+      "persona": "responder",
+      "home": {
+        "x": 901,
+        "z": 1000
+      }
+    },
+    {
+      "i": 43,
+      "persona": "copycat",
+      "home": {
+        "x": 947,
+        "z": 1001
+      }
+    },
+    {
+      "i": 44,
+      "persona": "tower",
+      "home": {
+        "x": 1003,
+        "z": 997
+      }
+    },
+    {
+      "i": 45,
+      "persona": "tower",
+      "home": {
+        "x": 1048,
+        "z": 1001
+      }
+    },
+    {
+      "i": 46,
+      "persona": "road",
+      "home": {
+        "x": 1103,
+        "z": 1000
+      }
+    },
+    {
+      "i": 47,
+      "persona": "edictProber",
+      "home": {
+        "x": 1146,
+        "z": 996
+      }
+    },
+    {
+      "i": 48,
+      "persona": "copycat",
+      "home": {
+        "x": 1206,
+        "z": 1001
+      }
+    },
+    {
+      "i": 49,
+      "persona": "styleFounder",
+      "home": {
+        "x": 1253,
+        "z": 999
+      }
+    },
+    {
+      "i": 50,
+      "persona": "cottage",
+      "home": {
+        "x": 799,
+        "z": 1045
+      }
+    },
+    {
+      "i": 51,
+      "persona": "cottage",
+      "home": {
+        "x": 844,
+        "z": 1052
+      }
+    },
+    {
+      "i": 52,
+      "persona": "responder",
+      "home": {
+        "x": 898,
+        "z": 1052
+      }
+    },
+    {
+      "i": 53,
+      "persona": "responder",
+      "home": {
+        "x": 941,
+        "z": 1052
+      }
+    },
+    {
+      "i": 54,
+      "persona": "edictProber",
+      "home": {
+        "x": 992,
+        "z": 1053
+      }
+    },
+    {
+      "i": 55,
+      "persona": "cottage",
+      "home": {
+        "x": 1050,
+        "z": 1051
+      }
+    },
+    {
+      "i": 56,
+      "persona": "responder",
+      "home": {
+        "x": 1098,
+        "z": 1051
+      }
+    },
+    {
+      "i": 57,
+      "persona": "styleFounder",
+      "home": {
+        "x": 1157,
+        "z": 1053
+      }
+    },
+    {
+      "i": 58,
+      "persona": "cottage",
+      "home": {
+        "x": 1204,
+        "z": 1044
+      }
+    },
+    {
+      "i": 59,
+      "persona": "responder",
+      "home": {
+        "x": 1254,
+        "z": 1054
+      }
+    },
+    {
+      "i": 60,
+      "persona": "styleFounder",
+      "home": {
+        "x": 788,
+        "z": 1105
+      }
+    },
+    {
+      "i": 61,
+      "persona": "edictProber",
+      "home": {
+        "x": 850,
+        "z": 1101
+      }
+    },
+    {
+      "i": 62,
+      "persona": "decorator",
+      "home": {
+        "x": 897,
+        "z": 1105
+      }
+    },
+    {
+      "i": 63,
+      "persona": "chatterbox",
+      "home": {
+        "x": 945,
+        "z": 1101
+      }
+    },
+    {
+      "i": 64,
+      "persona": "styleFounder",
+      "home": {
+        "x": 998,
+        "z": 1096
+      }
+    },
+    {
+      "i": 65,
+      "persona": "edictProber",
+      "home": {
+        "x": 1053,
+        "z": 1100
+      }
+    },
+    {
+      "i": 66,
+      "persona": "responder",
+      "home": {
+        "x": 1098,
+        "z": 1098
+      }
+    },
+    {
+      "i": 67,
+      "persona": "road",
+      "home": {
+        "x": 1146,
+        "z": 1097
+      }
+    },
+    {
+      "i": 68,
+      "persona": "styleFounder",
+      "home": {
+        "x": 1201,
+        "z": 1100
+      }
+    },
+    {
+      "i": 69,
+      "persona": "vandal",
+      "home": {
+        "x": 1249,
+        "z": 1103
+      }
+    },
+    {
+      "i": 70,
+      "persona": "idler",
+      "home": {
+        "x": 799,
+        "z": 1150
+      }
+    },
+    {
+      "i": 71,
+      "persona": "chatterbox",
+      "home": {
+        "x": 850,
+        "z": 1158
+      }
+    },
+    {
+      "i": 72,
+      "persona": "decorator",
+      "home": {
+        "x": 900,
+        "z": 1149
+      }
+    },
+    {
+      "i": 73,
+      "persona": "idler",
+      "home": {
+        "x": 944,
+        "z": 1153
+      }
+    },
+    {
+      "i": 74,
+      "persona": "idler",
+      "home": {
+        "x": 1003,
+        "z": 1150
+      }
+    },
+    {
+      "i": 75,
+      "persona": "decorator",
+      "home": {
+        "x": 1053,
+        "z": 1155
+      }
+    },
+    {
+      "i": 76,
+      "persona": "chatterbox",
+      "home": {
+        "x": 1102,
+        "z": 1156
+      }
+    },
+    {
+      "i": 77,
+      "persona": "responder",
+      "home": {
+        "x": 1149,
+        "z": 1152
+      }
+    },
+    {
+      "i": 78,
+      "persona": "road",
+      "home": {
+        "x": 1202,
+        "z": 1157
+      }
+    },
+    {
+      "i": 79,
+      "persona": "cottage",
+      "home": {
+        "x": 1253,
+        "z": 1158
+      }
+    },
+    {
+      "i": 80,
+      "persona": "copycat",
+      "home": {
+        "x": 795,
+        "z": 1205
+      }
+    },
+    {
+      "i": 81,
+      "persona": "decorator",
+      "home": {
+        "x": 846,
+        "z": 1206
+      }
+    },
+    {
+      "i": 82,
+      "persona": "copycat",
+      "home": {
+        "x": 900,
+        "z": 1203
+      }
+    },
+    {
+      "i": 83,
+      "persona": "idler",
+      "home": {
+        "x": 943,
+        "z": 1197
+      }
+    },
+    {
+      "i": 84,
+      "persona": "decorator",
+      "home": {
+        "x": 999,
+        "z": 1197
+      }
+    },
+    {
+      "i": 85,
+      "persona": "chatterbox",
+      "home": {
+        "x": 1050,
+        "z": 1201
+      }
+    },
+    {
+      "i": 86,
+      "persona": "tower",
+      "home": {
+        "x": 1098,
+        "z": 1201
+      }
+    },
+    {
+      "i": 87,
+      "persona": "styleFounder",
+      "home": {
+        "x": 1156,
+        "z": 1207
+      }
+    },
+    {
+      "i": 88,
+      "persona": "copycat",
+      "home": {
+        "x": 1204,
+        "z": 1206
+      }
+    },
+    {
+      "i": 89,
+      "persona": "decorator",
+      "home": {
+        "x": 1249,
+        "z": 1208
+      }
+    },
+    {
+      "i": 90,
+      "persona": "cottage",
+      "home": {
+        "x": 796,
+        "z": 1260
+      }
+    },
+    {
+      "i": 91,
+      "persona": "responder",
+      "home": {
+        "x": 840,
+        "z": 1252
+      }
+    },
+    {
+      "i": 92,
+      "persona": "responder",
+      "home": {
+        "x": 891,
+        "z": 1250
+      }
+    },
+    {
+      "i": 93,
+      "persona": "responder",
+      "home": {
+        "x": 945,
+        "z": 1254
+      }
+    },
+    {
+      "i": 94,
+      "persona": "edictProber",
+      "home": {
+        "x": 1002,
+        "z": 1257
+      }
+    },
+    {
+      "i": 95,
+      "persona": "chatterbox",
+      "home": {
+        "x": 1052,
+        "z": 1258
+      }
+    },
+    {
+      "i": 96,
+      "persona": "styleFounder",
+      "home": {
+        "x": 1107,
+        "z": 1252
+      }
+    },
+    {
+      "i": 97,
+      "persona": "responder",
+      "home": {
+        "x": 1148,
+        "z": 1248
+      }
+    },
+    {
+      "i": 98,
+      "persona": "decorator",
+      "home": {
+        "x": 1209,
+        "z": 1260
+      }
+    },
+    {
+      "i": 99,
+      "persona": "decorator",
+      "home": {
+        "x": 1256,
+        "z": 1250
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+[
+  { "code": "EDICT-1", "district": [800, 800, 864, 864], "deny_blocks": ["gold"], "above_y": null },
+  { "code": "EDICT-2", "district": [800, 800, 864, 864], "deny_blocks": null, "above_y": 12 }
+]

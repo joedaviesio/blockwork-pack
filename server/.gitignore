@@ -1,0 +1,3 @@
+# Runtime state (event log, records, snapshots) — never commit
+data/
+node_modules/

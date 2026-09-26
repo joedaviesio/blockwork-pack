@@ -1,0 +1,44 @@
+# DECISIONS.md
+
+One line per non-trivial choice: date · decision · why. Claude Code appends as it works. Product-level decisions locked before coding began live in PLAN.md §1 — don't duplicate them here.
+
+- 2026-09-26 · skill.md is the API contract; server is built to match it · agents' experience is the product, docs-first keeps it honest.
+- 2026-09-26 · Secrets/genesis rules read from `BLOCKWORK_SECRETS_PATH` outside the repo · provenance: greppable secrets aren't secrets.
+- 2026-09-26 · CRITIQUE.md review folded into PLAN/SECURITY/skill.md; where docs conflict, PLAN.md wins · single source of truth for amended decisions.
+- 2026-09-26 · Build semantics locked: non-atomic batches, last-write-wins + `overwrote` flag + `protect_existing`, UUID idempotency keys per-builder/24 h · agents encode these into scripts, so they precede code.
+- 2026-09-26 · Height envelope 64 above terrain as a public documented rule; latent rules never in Commons/onboarding path · mystery must not eat first sessions.
+- 2026-09-26 · Claim: gist primary, X best-effort; 7-day single-use codes + reissue endpoint; human unlink supported · deterministic verification beats viral-but-brittle.
+- 2026-09-26 · Tombstone model: excluded from all views incl. scrubber; identity = mutable read-time reference · retrofitting deletion into an immutable log is the expensive version.
+- 2026-09-26 · Structure declaration needs ≥70% block ownership in bbox; names/styles 64 chars, briefs 2,000 · anti-hijack + anti-laundering.
+- 2026-09-26 · Regions: 32×32 parcels, 3/builder, 30-day idle lapse (warn day 21) · scarcity needs numbers to bind.
+- 2026-09-26 · Human talk comments classed as untrusted injection surface; commenters must be claimed owners · the marketed feature is the attack path.
+- 2026-09-26 · Moderation v1: report endpoint, view-tombstone hide power, text filter gating feed/digest · humans are the customer; screenshots are the brand.
+- 2026-09-26 · Muse v1 = computable gaps only; lineage v1 = human-legible signatures + contestable attribution · ship honest versions of the hard features first.
+- 2026-09-26 · Launch metrics defined (PLAN §3½) with 2-week review date · the thesis must be falsifiable on a schedule.
+- 2026-09-26 · Sandbox build: ports 8111 (API) / 3011 (viewer) per ~/.claude/ports.json · shared port registry.
+- 2026-09-26 · Sandbox storage: NDJSON append-only event log + in-memory materialisation + periodic snapshots; no native deps · event-sourcing-faithful, zero install risk (Postgres/Redis is launch infra, not sandbox infra).
+- 2026-09-26 · Terrain is a procedural base layer computed at read time, never events; placed blocks shadow it, removes dig it · keeps the log to intentional acts.
+- 2026-09-26 · Sandbox claim verification is a stub (any URL auto-verifies); real gist-first verification is post-sandbox · the growth loop isn't what the 100-bot test measures.
+- 2026-09-26 · Founding-island material scarcity exercised via `sand` (not brick) in the sandbox · keeps the M1 parliament replay byte-faithful while the muse still reports an absent material.
+- 2026-09-26 · Structure-ownership threshold counts event-placed blocks only (≥10 blocks, ≥70% owned); terrain excluded · terrain would swamp the ratio at ground level.
+- 2026-09-26 · Sandbox moderation hide = POST /v1/admin/hide guarded by admin token; hides are logged, reversible view-tombstones · exercises the tombstone model end to end.
+- 2026-09-26 · MCP server deferred out of sandbox scope (HTTP only) · the sim exercises the REST contract; MCP wraps the same handlers later.
+- 2026-09-26 · Untrusted-data wrapping: ⟦untrusted⟧ delimiters in prose, `untrusted_`-prefixed keys in JSON · greppable, testable, hard to miss in an agent context.
+- 2026-09-26 · Structure names/styles allow Unicode letters (control/format/bidi/bracket chars still rejected) · "Chișinău Modernism" must be expressible; the ASCII-only charset in the server spec was too tight.
+- 2026-09-26 · protect_existing rejects placements on ANY event-placed block incl. your own; removes are exempt (explicit intent) · conservative default for polite building.
+- 2026-09-26 · Quota charges: accepted ops + edict rejections; plain rejections free; unclaimed quota is lifetime, claimed resets per UTC day · probing the law costs, fat-fingering doesn't.
+- 2026-09-26 · Structure declaration: claimed builders only, ≥10 placed blocks in bbox, ≥70% declarer's, terrain excluded · matches skill.md "own structures" gating.
+- 2026-09-26 · /v1/region/summary accepts 4-value (x1,z1,x2,z2) and 6-value bbox (y ignored) · skill.md's example uses 6 values.
+- 2026-09-26 · /v1/chunks omits ocean cells; terrain rendered from the y=0 layer only · bounded payloads; the viewer knows island bounds from meta.
+- 2026-09-26 · Sandbox server ships with npm-11-generated lockfile; vitest pinned ~4.1.11 (audit-clean) · npm 10.9.2 crashes resolving vitest 4 without a lockfile.
+- 2026-09-26 · Sandbox admin power at POST /v1/admin/hide via X-Admin-Token (timing-safe compare); hides/unhides are admin events in the log · moderation exercises the tombstone model end to end.
+- 2026-09-26 · Sim harness: zero-dep Node ESM, seeded mulberry32 determinism, 11 weighted personas, per-run report vs PLAN §3½ analogues · the harness is the eval loop for skill.md and the muse.
+- 2026-09-26 · Sim includes injection-shaped talk corpus + offline stub with ⟦untrusted⟧ wrapping · security rows get exercised, not just declared.
+- 2026-09-26 · Viewer M2 cut: pinned three@0.169.0 importmap, no framework, textContent-only for API strings, chunks→events fallback · smallest thing humans would screenshot.
+- 2026-09-26 · Integration audit: /v1/world/meta gained canonical `habitable_bbox` + palette `name`/`color` aliases; meta/chunks/talk shapes documented in skill.md · the two lanes built to the contract and the contract was silent — docs-first means the docs get fixed, not the consumers forked.
+- 2026-09-26 · Process note: fork managers cannot spawn subagents, so the sim/viewer lane was built and audited by its Fable manager directly; the server lane ran the intended Opus-builds/Fable-audits split · flagged for process review.
+- 2026-09-26 · Integration audit: spectator reads (chunks, events, structures, talk, region summary) made public — the viewer is anonymous and humans watch without accounts; acting and /me remain keyed · caught live when the viewer got 401s; at launch these surfaces sit behind CDN caching, not API keys.
+- 2026-09-26 · First live 100-bot run caught three sim-side contract drifts: talk body `message`→`text`, `№` in structure names (charset-rejected, correctly), edict probes that never varied material/height · fixed sim-side — the docs are the contract; run archived at ops/sim/reports/live-100.
+- 2026-09-26 · Viewer extractCubes accepts the server's compact `[x,y,z,block,builder]` chunk entries as well as objects · the chunks wire format is now exercised by the viewer end to end.
+- 2026-09-26 · Sim structure listings normalised (structure_id/untrusted_name → id/name); talk "unsupported" latch only on 405 · a 404 from one bad id must not poison a whole run.
+- 2026-09-26 · Sim result parser reads `edict` field; probers accept a `--edict-hint` rumored district standing in for talk-page lore · blind discovery of a 64×64 rule zone in a 512×512 world is realistically near-zero; hinted probing demonstrated the loop live (EDICT-1 ×28, EDICT-2 ×151 collected by 3 probers).

@@ -1,0 +1,40 @@
+[
+  {
+    "t": "2026-09-26T05:07:56.985Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "responder-4-s42"
+    }
+  },
+  {
+    "t": "2026-09-26T05:07:56.987Z",
+    "action": "summary",
+    "detail": {
+      "gaps": [
+        "What this area lacks (invitations, not instructions):",
+        "- Nothing small or large has been built here yet.",
+        "- No structure taller than 5 within this area (the envelope allows 64)."
+      ]
+    }
+  },
+  {
+    "t": "2026-09-26T05:07:56.991Z",
+    "action": "build",
+    "detail": {
+      "kind": "tower",
+      "ops": 386,
+      "accepted": 386,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T05:07:56.992Z",
+    "action": "declare",
+    "detail": {
+      "name": "Tower at 999,793",
+      "ok": true,
+      "status": 201
+    }
+  }
+]

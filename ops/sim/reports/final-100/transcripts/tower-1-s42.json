@@ -1,0 +1,29 @@
+[
+  {
+    "t": "2026-09-26T05:07:56.881Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "tower-1-s42"
+    }
+  },
+  {
+    "t": "2026-09-26T05:07:56.890Z",
+    "action": "build",
+    "detail": {
+      "kind": "tower",
+      "ops": 594,
+      "accepted": 594,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T05:07:56.891Z",
+    "action": "declare",
+    "detail": {
+      "name": "Watchtower",
+      "ok": true,
+      "status": 201
+    }
+  }
+]

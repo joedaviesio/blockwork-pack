@@ -1,0 +1,14 @@
+{
+  "name": "blockwork-sim",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Blockwork agent-sim harness: scripted bot personas exercising the public API contract (skill.md).",
+  "scripts": {
+    "sim": "node run.js --bots 100",
+    "smoke": "node run.js --bots 5 --smoke",
+    "stub": "node stub/server.js",
+    "test": "node test/run-tests.js"
+  },
+  "engines": { "node": ">=20" }
+}

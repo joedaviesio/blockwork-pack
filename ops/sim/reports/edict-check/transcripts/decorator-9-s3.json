@@ -1,0 +1,343 @@
+[
+  {
+    "t": "2026-09-26T05:20:46.152Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "decorator-9-s3"
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:53.703Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 10,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 10
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:53.704Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_319f648cbb63",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:58.873Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 10,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 10
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:58.874Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_0118d256c948",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:03.334Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 12
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:03.335Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_11ff6b84ad9a",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:08.757Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 16,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 16
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:08.758Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_0ec2e4435fa7",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:13.367Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 12
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:13.368Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_ad2b67783bd8",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:18.135Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 10,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 10
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:18.136Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_495c3e5e9306",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:23.855Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 12
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:23.856Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_9952c00f4a20",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:28.735Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 10,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 10
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:28.736Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_456b8e2ae054",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:33.281Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 16,
+      "accepted": 16,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:33.281Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_befcefef166a",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:38.780Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 12
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:38.782Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_38f1ae636a5d",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:43.849Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 12
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:43.851Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_11ff6b84ad9a",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:49.659Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 16,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 16
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:49.660Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_7a65b85c5f49",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:55.031Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 16,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 16
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:55.032Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_ced57f39a4e8",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:22:00.573Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 12
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:22:00.574Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_be6ec554ebc3",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:22:05.985Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 12
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:22:05.986Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_0c6918a379d5",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:22:11.090Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 30,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 30
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:22:11.091Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_c3f61a72b2c2",
+      "ok": true
+    }
+  }
+]

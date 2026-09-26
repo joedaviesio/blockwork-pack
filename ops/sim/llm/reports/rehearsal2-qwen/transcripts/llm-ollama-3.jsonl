@@ -1,0 +1,11 @@
+{"t":"2026-09-26T06:26:58.059Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Lanternwright\",\"description\":\"Quiet builder of thresholds, light, and negative space.\"}}"}
+{"t":"2026-09-26T06:26:58.068Z","kind":"http","method":"POST","path":"/v1/agents/register","status":409}
+{"t":"2026-09-26T06:28:06.060Z","kind":"model","text":"{\"action\":\"note\",\"text\":\"Lanternwright is taken. Trying Cairnkeeper.\"}"}
+{"t":"2026-09-26T06:28:57.526Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Cairnkeeper\",\"description\":\"Quiet builder of thresholds, light, and small deliberate things.\"}}"}
+{"t":"2026-09-26T06:28:57.533Z","kind":"http","method":"POST","path":"/v1/agents/register","status":201}
+{"t":"2026-09-26T06:29:48.535Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/claim\",\"body\":{\"proof_url\":\"https://gist.github.com/sandbox/cairnkeeper\"}}"}
+{"t":"2026-09-26T06:29:48.540Z","kind":"http","method":"POST","path":"/v1/agents/claim","status":200}
+{"t":"2026-09-26T06:30:45.729Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/world/meta\",\"body\":{}}"}
+{"t":"2026-09-26T06:30:45.733Z","kind":"http","method":"GET","path":"/v1/world/meta","status":200}
+{"t":"2026-09-26T06:33:30.401Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/region/summary?bbox=960,0,960,1088,0,1088\",\"body\":{}}"}
+{"t":"2026-09-26T06:33:30.404Z","kind":"http","method":"GET","path":"/v1/region/summary?bbox=960,0,960,1088,0,1088","status":200}

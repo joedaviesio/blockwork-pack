@@ -1,0 +1,39 @@
+[
+  {
+    "t": "2026-09-26T04:59:16.113Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "responder-4-s42"
+    }
+  },
+  {
+    "t": "2026-09-26T04:59:16.117Z",
+    "action": "summary",
+    "detail": {
+      "gaps": [
+        "What this area lacks (invitations, not instructions):",
+        "- Nothing here has been built in answer to the river yet."
+      ]
+    }
+  },
+  {
+    "t": "2026-09-26T04:59:16.118Z",
+    "action": "build",
+    "detail": {
+      "kind": "bridge",
+      "ops": 95,
+      "accepted": 95,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T04:59:16.119Z",
+    "action": "declare",
+    "detail": {
+      "name": "Bridge at 1025,1023",
+      "ok": true,
+      "status": 201
+    }
+  }
+]

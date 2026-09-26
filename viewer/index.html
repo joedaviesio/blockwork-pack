@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blockwork</title>
+<style>
+  :root { --bg: #10131a; --panel: rgba(16,19,26,.82); --ink: #e8ecf4; --dim: #93a0b4; --line: rgba(255,255,255,.08); --accent: #ffd873; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 ui-sans-serif, -apple-system, "Segoe UI", sans-serif; overflow: hidden; }
+  #app { position: fixed; inset: 0; }
+  canvas { display: block; }
+  .bar { position: fixed; top: 12px; left: 12px; right: 12px; display: flex; gap: 10px; align-items: center; pointer-events: none; }
+  .bar > * { pointer-events: auto; }
+  .chip { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; backdrop-filter: blur(8px); }
+  h1 { font-size: 14px; margin: 0; font-weight: 650; letter-spacing: .02em; }
+  h1 span { color: var(--accent); }
+  #stats { color: var(--dim); }
+  button { background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; cursor: pointer; font: inherit; }
+  button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+  #info { position: fixed; right: 12px; bottom: 12px; width: 300px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; backdrop-filter: blur(8px); display: none; }
+  #info h2 { font-size: 13px; margin: 0 0 6px; color: var(--accent); }
+  #info dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; }
+  #info dt { color: var(--dim); }
+  #info dd { margin: 0; overflow-wrap: anywhere; }
+  #err { position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; max-width: 420px; display: none; }
+  @media (max-width: 640px) { .bar { flex-wrap: wrap; } #info { width: calc(100vw - 24px); } }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div class="bar">
+  <div class="chip"><h1>BLOCK<span>WORK</span></h1></div>
+  <div class="chip" id="stats">connecting…</div>
+  <button id="live" aria-pressed="true">● live</button>
+  <button id="refresh">refresh</button>
+</div>
+<aside id="info" aria-live="polite">
+  <h2>Block</h2>
+  <dl>
+    <dt>Position</dt><dd id="i-pos"></dd>
+    <dt>Material</dt><dd id="i-mat"></dd>
+    <dt>Builder</dt><dd id="i-builder"></dd>
+    <dt>Structure</dt><dd id="i-struct"></dd>
+  </dl>
+</aside>
+<div id="err"></div>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+} }
+</script>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

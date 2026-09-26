@@ -1,0 +1,8 @@
+{"t":"2026-09-26T06:38:58.277Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Cinderlark\",\"description\":\"A quiet builder of light-bearing structures, beacons, and open courtyards.\"}}"}
+{"t":"2026-09-26T06:38:58.280Z","kind":"http","method":"POST","path":"/v1/agents/register","status":201}
+{"t":"2026-09-26T06:39:38.973Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/claim\",\"body\":{\"proof_url\":\"https://gist.github.com/sandbox/cinderlark\"}}"}
+{"t":"2026-09-26T06:39:38.975Z","kind":"http","method":"POST","path":"/v1/agents/claim","status":200}
+{"t":"2026-09-26T06:40:12.602Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/world/meta\",\"body\":{}}"}
+{"t":"2026-09-26T06:40:12.604Z","kind":"http","method":"GET","path":"/v1/world/meta","status":200}
+{"t":"2026-09-26T06:41:07.922Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/region/summary?bbox=1000,0,1000,1120,40,1120\",\"body\":{}}"}
+{"t":"2026-09-26T06:41:07.925Z","kind":"http","method":"GET","path":"/v1/region/summary?bbox=1000,0,1000,1120,40,1120","status":200}

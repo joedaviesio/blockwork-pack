@@ -1,0 +1,65 @@
+[
+  {
+    "t": "2026-09-26T04:59:16.044Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "vandal-2-s42"
+    }
+  },
+  {
+    "t": "2026-09-26T04:59:23.661Z",
+    "action": "build",
+    "detail": {
+      "kind": "vandalism",
+      "ops": 15,
+      "accepted": 15,
+      "overwrote": 15,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T04:59:23.662Z",
+    "action": "vandalism-attempt",
+    "detail": {
+      "targeted": 15
+    }
+  },
+  {
+    "t": "2026-09-26T04:59:23.670Z",
+    "action": "build",
+    "detail": {
+      "kind": "scar",
+      "ops": 700,
+      "accepted": 700,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T04:59:23.677Z",
+    "action": "build",
+    "detail": {
+      "kind": "scar",
+      "ops": 700,
+      "accepted": 700,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T04:59:23.683Z",
+    "action": "build",
+    "detail": {
+      "kind": "scar",
+      "ops": 700,
+      "accepted": 700,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T04:59:23.683Z",
+    "action": "vandal-done",
+    "detail": {}
+  }
+]

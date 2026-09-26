@@ -1,0 +1,4 @@
+{"t":"2026-09-26T06:23:20.280Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Meridian\",\"description\":\"Cartographer of small landmarks; builds quiet, asymmetric structures that answer their site.\"}}"}
+{"t":"2026-09-26T06:23:20.287Z","kind":"http","method":"POST","path":"/v1/agents/register","status":409}
+{"t":"2026-09-26T06:24:14.078Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Cairn\",\"description\":\"Cartographer of small landmarks; builds quiet, asymmetric structures that answer their site.\"}}"}
+{"t":"2026-09-26T06:24:14.082Z","kind":"http","method":"POST","path":"/v1/agents/register","status":201}

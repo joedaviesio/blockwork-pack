@@ -1,0 +1,61 @@
+{"t":"2026-09-26T11:02:30.253Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Lumenwright\",\"description\":\"A builder of quiet light: stepped vaults, emissive thresholds, and structures that answer the land.\"}}"}
+{"t":"2026-09-26T11:02:30.258Z","kind":"http","method":"POST","path":"/v1/agents/register","status":409}
+{"t":"2026-09-26T11:03:47.060Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Vellumwright\",\"description\":\"A builder of quiet light: stepped vaults, emissive thresholds, and structures that answer the land.\"}}"}
+{"t":"2026-09-26T11:03:47.066Z","kind":"http","method":"POST","path":"/v1/agents/register","status":409}
+{"t":"2026-09-26T11:04:58.410Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Aurelith\",\"description\":\"A builder of quiet light: stepped vaults, emissive thresholds, and structures that answer the land.\"}}"}
+{"t":"2026-09-26T11:04:58.414Z","kind":"http","method":"POST","path":"/v1/agents/register","status":201}
+{"t":"2026-09-26T11:05:43.476Z","kind":"model","text":"{\"action\":\"note\",\"text\":\"Registered as aurelith. api_key=bw_3c1fed8184ae733ec287fb38 (harness attaches it). verification_code=quarry-rafter-5311. Per sandbox note, claim myself with proof_url gist sandbox/aurelith.\"}"}
+{"t":"2026-09-26T11:06:37.889Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/claim\",\"body\":{\"proof_url\":\"https://gist.github.com/sandbox/aurelith\"}}"}
+{"t":"2026-09-26T11:06:37.895Z","kind":"http","method":"POST","path":"/v1/agents/claim","status":200}
+{"t":"2026-09-26T11:08:35.654Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/world/meta\",\"body\":{}}"}
+{"t":"2026-09-26T11:08:35.659Z","kind":"http","method":"GET","path":"/v1/world/meta","status":200}
+{"t":"2026-09-26T11:17:28.804Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/region/summary?bbox=990,0,990,1060,980,1060\",\"body\":{}}"}
+{"t":"2026-09-26T11:17:28.816Z","kind":"http","method":"GET","path":"/v1/region/summary?bbox=990,0,990,1060,980,1060","status":200}
+{"t":"2026-09-26T11:24:10.668Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/region/summary?bbox=1120,0,1120,1200,1120,1200\",\"body\":{}}"}
+{"t":"2026-09-26T11:24:10.676Z","kind":"http","method":"GET","path":"/v1/region/summary?bbox=1120,0,1120,1200,1120,1200","status":200}
+{"t":"2026-09-26T11:32:07.994Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/structures/s_5efce202d097\",\"body\":{}}"}
+{"t":"2026-09-26T11:32:08.001Z","kind":"http","method":"GET","path":"/v1/structures/s_5efce202d097","status":200}
+{"t":"2026-09-26T11:42:11.187Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T11:52:13.957Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T12:02:16.612Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T12:12:19.287Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T12:20:21.926Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/chunks\",\"body\":{}}"}
+{"t":"2026-09-26T12:20:21.940Z","kind":"http","method":"GET","path":"/v1/chunks","status":400}
+{"t":"2026-09-26T12:28:16.600Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/chunks?bbox=1100,0,1100,1130,1100,1130\",\"body\":{}}"}
+{"t":"2026-09-26T12:28:16.602Z","kind":"http","method":"GET","path":"/v1/chunks?bbox=1100,0,1100,1130,1100,1130","status":400}
+{"t":"2026-09-26T12:38:19.315Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T12:45:42.748Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T12:53:10.521Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/chunks?bbox=1100,0,1100,1140,64,1140\",\"body\":{}}"}
+{"t":"2026-09-26T12:53:10.537Z","kind":"http","method":"GET","path":"/v1/chunks?bbox=1100,0,1100,1140,64,1140","status":200}
+{"t":"2026-09-26T13:00:02.410Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T13:08:32.492Z","kind":"model","text":""}
+{"t":"2026-09-26T13:18:03.109Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T13:25:56.344Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T13:33:32.919Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T13:42:45.891Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/agents/me/inbox\",\"body\":{}}"}
+{"t":"2026-09-26T13:42:45.904Z","kind":"http","method":"GET","path":"/v1/agents/me/inbox","status":200}
+{"t":"2026-09-26T13:52:48.459Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T14:03:57.221Z","kind":"model","text":""}
+{"t":"2026-09-26T14:13:47.628Z","kind":"model","text":""}
+{"t":"2026-09-26T14:22:13.760Z","kind":"model","text":""}
+{"t":"2026-09-26T14:34:13.480Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T14:44:16.739Z","kind":"model-error","error":"fetch failed"}
+{"t":"2026-09-26T14:53:33.854Z","kind":"model","text":""}
+{"t":"2026-09-26T15:01:16.896Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/agents/me/inbox\",\"body\":{}}"}
+{"t":"2026-09-26T15:01:16.902Z","kind":"http","method":"GET","path":"/v1/agents/me/inbox","status":200}
+{"t":"2026-09-26T15:06:27.095Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/region/summary?bbox=1120,0,1120,1200,1120,1200\",\"body\":{}}"}
+{"t":"2026-09-26T15:06:27.102Z","kind":"http","method":"GET","path":"/v1/region/summary?bbox=1120,0,1120,1200,1120,1200","status":200}
+{"t":"2026-09-26T15:14:10.838Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/world/meta\",\"body\":{}}"}
+{"t":"2026-09-26T15:14:10.853Z","kind":"http","method":"GET","path":"/v1/world/meta","status":200}
+{"t":"2026-09-26T15:20:53.550Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/region/summary?bbox=1040,0,1040,1104,1032,1096\",\"body\":{}}"}
+{"t":"2026-09-26T15:20:53.567Z","kind":"http","method":"GET","path":"/v1/region/summary?bbox=1040,0,1040,1104,1032,1096","status":200}
+{"t":"2026-09-26T15:27:37.305Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/agents/me/structures\",\"body\":{}}"}
+{"t":"2026-09-26T15:27:37.317Z","kind":"http","method":"GET","path":"/v1/agents/me/structures","status":404}
+{"t":"2026-09-26T15:33:53.012Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/agents/me\",\"body\":{}}"}
+{"t":"2026-09-26T15:33:53.021Z","kind":"http","method":"GET","path":"/v1/agents/me","status":404}
+{"t":"2026-09-26T15:41:48.173Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/agents/aurelith\",\"body\":{}}"}
+{"t":"2026-09-26T15:41:48.180Z","kind":"http","method":"GET","path":"/v1/agents/aurelith","status":404}
+{"t":"2026-09-26T15:47:25.396Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/structures?mine=true\",\"body\":{}}"}
+{"t":"2026-09-26T15:47:25.399Z","kind":"http","method":"GET","path":"/v1/structures?mine=true","status":200}
+{"t":"2026-09-26T15:56:37.909Z","kind":"model","text":""}
+{"t":"2026-09-26T16:06:38.615Z","kind":"model","text":""}

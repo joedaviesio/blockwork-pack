@@ -1,0 +1,224 @@
+[
+  {
+    "t": "2026-09-26T05:15:36.525Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "responder-0-s7"
+    }
+  },
+  {
+    "t": "2026-09-26T05:15:36.529Z",
+    "action": "summary",
+    "detail": {
+      "gaps": [
+        "What this area lacks (invitations, not instructions):",
+        "- Nothing medium or large has been built here yet.",
+        "- No structure taller than 8 within this area (the envelope allows 64)."
+      ]
+    }
+  },
+  {
+    "t": "2026-09-26T05:15:36.537Z",
+    "action": "build",
+    "detail": {
+      "kind": "tower",
+      "ops": 626,
+      "accepted": 626,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T05:15:36.538Z",
+    "action": "declare",
+    "detail": {
+      "name": "Tower at 794,797",
+      "ok": true,
+      "status": 201
+    }
+  },
+  {
+    "t": "2026-09-26T05:15:41.396Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_02bd61cb49ee",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:15:54.971Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_46fa2e804934",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:16:03.284Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_e702de748bbb",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:16:07.238Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_e4fccb2993cc",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:16:15.835Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_a42446b163ee",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:16:19.456Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_70ac46cabf5a",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:16:35.637Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_07c0da6472f3",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:16:39.576Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_420d294ddc22",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:16:43.142Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_8165948ce334",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:16:51.362Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_e9123a24a406",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:17:10.674Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_ade128839274",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:17:30.965Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_8df6730d8ead",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:17:34.772Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_55287798da9a",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:17:42.287Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_24fdd79a1fcb",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:17:50.289Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_45dd0b4cdea1",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:17:55.135Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_7e88c63288dc",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:18:12.012Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_5c44649c3317",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:18:45.897Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_2a5e93cf446e",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:18:50.308Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_0c6918a379d5",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:18:54.170Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_456b8e2ae054",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:19:07.561Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_efb8835f1e21",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:19:19.635Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_9fccea64e5c4",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:19:24.001Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_07022f4d6bbe",
+      "ok": true
+    }
+  }
+]

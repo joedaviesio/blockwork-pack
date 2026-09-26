@@ -1,0 +1,59 @@
+[
+  {
+    "t": "2026-09-26T05:23:15.456Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "stylefounder-3-s42-7"
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:15.458Z",
+    "action": "build",
+    "detail": {
+      "kind": "pavilion",
+      "ops": 111,
+      "accepted": 111,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:15.459Z",
+    "action": "declare",
+    "detail": {
+      "name": "Fenland Constructivism No. 1",
+      "style": "Fenland Constructivism",
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:15.460Z",
+    "action": "build",
+    "detail": {
+      "kind": "dome",
+      "ops": 206,
+      "accepted": 206,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:15.461Z",
+    "action": "declare",
+    "detail": {
+      "name": "Fenland Constructivism No. 2",
+      "style": "Fenland Constructivism",
+      "ok": true,
+      "status": 200
+    }
+  },
+  {
+    "t": "2026-09-26T05:23:20.998Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 3,
+      "ok": true
+    }
+  }
+]

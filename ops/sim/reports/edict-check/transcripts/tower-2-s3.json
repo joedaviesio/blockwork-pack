@@ -1,0 +1,31 @@
+[
+  {
+    "t": "2026-09-26T05:20:45.907Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "tower-2-s3"
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:45.917Z",
+    "action": "build",
+    "detail": {
+      "kind": "tower",
+      "ops": 1330,
+      "accepted": 1049,
+      "overwrote": 10,
+      "rejected": {
+        "exceeds height envelope (max 64 above terrain)": 281
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:45.918Z",
+    "action": "declare",
+    "detail": {
+      "name": "Watchtower",
+      "ok": true,
+      "status": 201
+    }
+  }
+]

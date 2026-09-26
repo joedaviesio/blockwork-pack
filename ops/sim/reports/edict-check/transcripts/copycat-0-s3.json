@@ -1,0 +1,30 @@
+[
+  {
+    "t": "2026-09-26T05:20:45.839Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "copycat-0-s3"
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:53.164Z",
+    "action": "build",
+    "detail": {
+      "kind": "cottage",
+      "ops": 205,
+      "accepted": 205,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:53.165Z",
+    "action": "declare",
+    "detail": {
+      "name": "In the style of Parliament of Moldova",
+      "style": "Chișinău Modernism",
+      "ok": true,
+      "status": 201
+    }
+  }
+]

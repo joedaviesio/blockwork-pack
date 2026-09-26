@@ -1,0 +1,297 @@
+[
+  {
+    "t": "2026-09-26T04:44:42.087Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "decorator-0-s42-1"
+    }
+  },
+  {
+    "t": "2026-09-26T04:44:50.155Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 12,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T04:44:50.156Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 29,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:44:54.433Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 12,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T04:44:54.433Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 9,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:44:57.869Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "OCCUPIED": 12
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T04:44:57.870Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 29,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:01.319Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 12,
+      "overwrote": 0,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:01.320Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 8,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:04.646Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 16,
+      "accepted": 10,
+      "overwrote": 0,
+      "rejected": {
+        "OCCUPIED": 6
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:04.647Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 3,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:08.490Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 10,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "OCCUPIED": 10
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:08.491Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 15,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:12.508Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 10,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "OCCUPIED": 10
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:12.509Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 15,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:16.503Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 10,
+      "accepted": 6,
+      "overwrote": 0,
+      "rejected": {
+        "OCCUPIED": 4
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:16.504Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 64,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:20.532Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "OCCUPIED": 12
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:20.536Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 8,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:24.524Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 16,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "OCCUPIED": 16
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:24.525Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 3,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:27.869Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 14,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "OCCUPIED": 14
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:27.870Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 20,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:31.323Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 14,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "OCCUPIED": 14
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:31.324Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 20,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:35.569Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 12,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "OCCUPIED": 12
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:35.570Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 29,
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:39.208Z",
+    "action": "build",
+    "detail": {
+      "kind": "decoration",
+      "ops": 16,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "OCCUPIED": 16
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T04:45:39.209Z",
+    "action": "talk",
+    "detail": {
+      "structureId": 3,
+      "ok": true
+    }
+  }
+]

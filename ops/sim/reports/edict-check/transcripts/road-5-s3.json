@@ -1,0 +1,31 @@
+[
+  {
+    "t": "2026-09-26T05:20:46.011Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "road-5-s3"
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:50.644Z",
+    "action": "build",
+    "detail": {
+      "kind": "road",
+      "ops": 622,
+      "accepted": 0,
+      "overwrote": 0,
+      "rejected": {
+        "cell occupied (protect_existing)": 622
+      }
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:50.649Z",
+    "action": "declare",
+    "detail": {
+      "name": "Connecting Road",
+      "ok": false,
+      "status": 403
+    }
+  }
+]

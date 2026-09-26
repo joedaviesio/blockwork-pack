@@ -1,0 +1,320 @@
+{
+  "opts": {
+    "bots": 30,
+    "base": "http://localhost:8111",
+    "seed": 3,
+    "minutes": 1.5,
+    "smoke": false,
+    "area": null,
+    "out": "reports/edict-check-3",
+    "edictHint": [
+      800,
+      800,
+      864,
+      864
+    ]
+  },
+  "area": [
+    768,
+    768,
+    1280,
+    1280
+  ],
+  "materials": [
+    "stone",
+    "dirt",
+    "grass",
+    "water",
+    "wood",
+    "leaves",
+    "glass",
+    "metal",
+    "light",
+    "obsidian",
+    "snow",
+    "brick",
+    "gold",
+    "moss"
+  ],
+  "summary": {
+    "run": {
+      "seconds": 1,
+      "bots": 30,
+      "requests": 30,
+      "errors": 30,
+      "retries": 0,
+      "rps": 29.4
+    },
+    "onboarding": {
+      "registered": 0,
+      "registerFailed": 30,
+      "claimed": 0,
+      "claimFailed": 0
+    },
+    "building": {
+      "blocksAccepted": 0,
+      "blocksRejected": 0,
+      "overwrites": 0,
+      "rejectsByReason": {},
+      "edictCodesSeen": {},
+      "buildCalls": 0
+    },
+    "social": {
+      "structuresDeclared": 0,
+      "declareRejected": 0,
+      "distinctStyles": 0,
+      "talkPosts": 0,
+      "talkUnsupported": 0,
+      "inboxChecks": 0,
+      "summaryReads": 0
+    },
+    "thesis": {
+      "responderGapHit": 0,
+      "responderGapMiss": 0,
+      "gapResponseRate": null
+    },
+    "personas": {}
+  },
+  "assignments": [
+    {
+      "i": 0,
+      "persona": "copycat",
+      "home": {
+        "x": 813,
+        "z": 807
+      }
+    },
+    {
+      "i": 1,
+      "persona": "responder",
+      "home": {
+        "x": 895,
+        "z": 810
+      }
+    },
+    {
+      "i": 2,
+      "persona": "tower",
+      "home": {
+        "x": 975,
+        "z": 816
+      }
+    },
+    {
+      "i": 3,
+      "persona": "responder",
+      "home": {
+        "x": 1064,
+        "z": 813
+      }
+    },
+    {
+      "i": 4,
+      "persona": "copycat",
+      "home": {
+        "x": 1152,
+        "z": 817
+      }
+    },
+    {
+      "i": 5,
+      "persona": "road",
+      "home": {
+        "x": 1231,
+        "z": 816
+      }
+    },
+    {
+      "i": 6,
+      "persona": "road",
+      "home": {
+        "x": 810,
+        "z": 890
+      }
+    },
+    {
+      "i": 7,
+      "persona": "responder",
+      "home": {
+        "x": 902,
+        "z": 896
+      }
+    },
+    {
+      "i": 8,
+      "persona": "cottage",
+      "home": {
+        "x": 987,
+        "z": 898
+      }
+    },
+    {
+      "i": 9,
+      "persona": "decorator",
+      "home": {
+        "x": 1073,
+        "z": 898
+      }
+    },
+    {
+      "i": 10,
+      "persona": "responder",
+      "home": {
+        "x": 1153,
+        "z": 897
+      }
+    },
+    {
+      "i": 11,
+      "persona": "responder",
+      "home": {
+        "x": 1242,
+        "z": 891
+      }
+    },
+    {
+      "i": 12,
+      "persona": "copycat",
+      "home": {
+        "x": 805,
+        "z": 979
+      }
+    },
+    {
+      "i": 13,
+      "persona": "road",
+      "home": {
+        "x": 899,
+        "z": 986
+      }
+    },
+    {
+      "i": 14,
+      "persona": "chatterbox",
+      "home": {
+        "x": 977,
+        "z": 978
+      }
+    },
+    {
+      "i": 15,
+      "persona": "vandal",
+      "home": {
+        "x": 1067,
+        "z": 987
+      }
+    },
+    {
+      "i": 16,
+      "persona": "cottage",
+      "home": {
+        "x": 1151,
+        "z": 984
+      }
+    },
+    {
+      "i": 17,
+      "persona": "styleFounder",
+      "home": {
+        "x": 1234,
+        "z": 987
+      }
+    },
+    {
+      "i": 18,
+      "persona": "cottage",
+      "home": {
+        "x": 805,
+        "z": 1073
+      }
+    },
+    {
+      "i": 19,
+      "persona": "styleFounder",
+      "home": {
+        "x": 896,
+        "z": 1064
+      }
+    },
+    {
+      "i": 20,
+      "persona": "road",
+      "home": {
+        "x": 983,
+        "z": 1063
+      }
+    },
+    {
+      "i": 21,
+      "persona": "chatterbox",
+      "home": {
+        "x": 1071,
+        "z": 1061
+      }
+    },
+    {
+      "i": 22,
+      "persona": "road",
+      "home": {
+        "x": 1149,
+        "z": 1065
+      }
+    },
+    {
+      "i": 23,
+      "persona": "responder",
+      "home": {
+        "x": 1238,
+        "z": 1065
+      }
+    },
+    {
+      "i": 24,
+      "persona": "vandal",
+      "home": {
+        "x": 808,
+        "z": 1158
+      }
+    },
+    {
+      "i": 25,
+      "persona": "cottage",
+      "home": {
+        "x": 897,
+        "z": 1156
+      }
+    },
+    {
+      "i": 26,
+      "persona": "edictProber",
+      "home": {
+        "x": 983,
+        "z": 1157
+      }
+    },
+    {
+      "i": 27,
+      "persona": "copycat",
+      "home": {
+        "x": 1067,
+        "z": 1150
+      }
+    },
+    {
+      "i": 28,
+      "persona": "tower",
+      "home": {
+        "x": 1153,
+        "z": 1146
+      }
+    },
+    {
+      "i": 29,
+      "persona": "copycat",
+      "home": {
+        "x": 1231,
+        "z": 1158
+      }
+    }
+  ]
+}

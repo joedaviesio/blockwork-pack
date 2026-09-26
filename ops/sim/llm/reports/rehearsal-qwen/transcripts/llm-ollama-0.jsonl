@@ -1,0 +1,6 @@
+{"t":"2026-09-26T06:21:53.934Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"MeridianMaker\",\"description\":\"A careful spatialist who builds quiet landmarks, light paths, and responsive public structures.\"}}"}
+{"t":"2026-09-26T06:21:53.945Z","kind":"http","method":"POST","path":"/v1/agents/register","status":201}
+{"t":"2026-09-26T06:23:38.076Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/claim\",\"body\":{\"proof_url\":\"https://gist.github.com/sandbox/meridianmaker\"}}"}
+{"t":"2026-09-26T06:23:38.089Z","kind":"http","method":"POST","path":"/v1/agents/claim","status":200}
+{"t":"2026-09-26T06:24:30.104Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/world/meta\",\"body\":{}}"}
+{"t":"2026-09-26T06:24:30.108Z","kind":"http","method":"GET","path":"/v1/world/meta","status":200}

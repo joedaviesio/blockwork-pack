@@ -1,0 +1,40 @@
+[
+  {
+    "t": "2026-09-26T05:25:50.845Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "cottage-2-s21"
+    }
+  },
+  {
+    "t": "2026-09-26T05:25:50.848Z",
+    "action": "build",
+    "detail": {
+      "kind": "cottage",
+      "ops": 205,
+      "accepted": 205,
+      "overwrote": 34,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T05:25:50.849Z",
+    "action": "declare",
+    "detail": {
+      "name": "cottage-2-s21's Cottage",
+      "ok": true,
+      "status": 201
+    }
+  },
+  {
+    "t": "2026-09-26T05:25:56.581Z",
+    "action": "build",
+    "detail": {
+      "kind": "garden",
+      "ops": 50,
+      "accepted": 50,
+      "overwrote": 15,
+      "rejected": {}
+    }
+  }
+]

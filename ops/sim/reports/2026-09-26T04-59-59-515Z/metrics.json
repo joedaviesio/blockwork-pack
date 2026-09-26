@@ -1,0 +1,122 @@
+{
+  "opts": {
+    "bots": 5,
+    "base": "http://localhost:8111",
+    "seed": 42,
+    "minutes": 0.75,
+    "smoke": true,
+    "area": null,
+    "out": null
+  },
+  "area": [
+    768,
+    768,
+    1280,
+    1280
+  ],
+  "materials": [
+    "stone",
+    "dirt",
+    "grass",
+    "water",
+    "wood",
+    "leaves",
+    "glass",
+    "metal",
+    "light",
+    "obsidian",
+    "snow",
+    "brick",
+    "gold",
+    "moss"
+  ],
+  "summary": {
+    "run": {
+      "seconds": 43.5,
+      "bots": 5,
+      "requests": 91,
+      "errors": 4,
+      "retries": 0,
+      "rps": 2.1
+    },
+    "onboarding": {
+      "registered": 5,
+      "registerFailed": 0,
+      "claimed": 5,
+      "claimFailed": 0
+    },
+    "building": {
+      "blocksAccepted": 3161,
+      "blocksRejected": 160,
+      "overwrites": 15,
+      "rejectsByReason": {
+        "cell occupied (protect_existing)": 160
+      },
+      "edictCodesSeen": {},
+      "buildCalls": 22
+    },
+    "social": {
+      "structuresDeclared": 2,
+      "declareRejected": 2,
+      "distinctStyles": 0,
+      "talkPosts": 0,
+      "talkUnsupported": 6,
+      "inboxChecks": 24,
+      "summaryReads": 1
+    },
+    "thesis": {
+      "responderGapHit": 1,
+      "responderGapMiss": 0,
+      "gapResponseRate": 1
+    },
+    "personas": {
+      "decorator": 1,
+      "tower": 1,
+      "vandal": 1,
+      "styleFounder": 1,
+      "responder": 1
+    }
+  },
+  "assignments": [
+    {
+      "i": 0,
+      "persona": "decorator",
+      "home": {
+        "x": 852,
+        "z": 858
+      }
+    },
+    {
+      "i": 1,
+      "persona": "tower",
+      "home": {
+        "x": 1020,
+        "z": 847
+      }
+    },
+    {
+      "i": 2,
+      "persona": "vandal",
+      "home": {
+        "x": 1190,
+        "z": 851
+      }
+    },
+    {
+      "i": 3,
+      "persona": "styleFounder",
+      "home": {
+        "x": 859,
+        "z": 1022
+      }
+    },
+    {
+      "i": 4,
+      "persona": "responder",
+      "home": {
+        "x": 1025,
+        "z": 1023
+      }
+    }
+  ]
+}

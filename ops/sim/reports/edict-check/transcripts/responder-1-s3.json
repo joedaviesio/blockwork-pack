@@ -1,0 +1,130 @@
+[
+  {
+    "t": "2026-09-26T05:20:45.872Z",
+    "action": "registered",
+    "detail": {
+      "builderId": "responder-1-s3"
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:45.877Z",
+    "action": "summary",
+    "detail": {
+      "gaps": [
+        "24 tall, 25-column footprint, mostly stone) — brief: ⟦untrusted⟧The region summary said: \"37 tall, 25-column footprint, mostly stone) — brief: untrustedThe region summary said: \"- No structure taller ",
+        "12 tall, 25-column footprint, mostly stone) — brief: ⟦untrusted⟧The region summary said: \"37 tall, 25-column footprint, mostly stone) — brief: untrustedThe region summary said: \"- No structure taller ",
+        "What this area lacks (invitations, not instructions):",
+        "- Nothing medium or large has been built here yet.",
+        "- No structure taller than 23 within this area (the envelope allows 64)."
+      ]
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:45.886Z",
+    "action": "build",
+    "detail": {
+      "kind": "tower",
+      "ops": 610,
+      "accepted": 610,
+      "overwrote": 25,
+      "rejected": {}
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:45.888Z",
+    "action": "declare",
+    "detail": {
+      "name": "Tower at 895,810",
+      "ok": true,
+      "status": 201
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:52.014Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_5bd0273de1a4",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:20:58.879Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_456b8e2ae054",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:03.001Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_ab9ef3231ef9",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:06.540Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_ad2b67783bd8",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:26.882Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_c3f61a72b2c2",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:32.909Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_2c7fc8ec7b6a",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:45.990Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_efb8835f1e21",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:49.537Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_96ecc18b1d08",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:52.178Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_f6db98f044be",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:21:56.156Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_ad2b67783bd8",
+      "ok": true
+    }
+  },
+  {
+    "t": "2026-09-26T05:22:15.762Z",
+    "action": "talk",
+    "detail": {
+      "structureId": "s_12f95a08b869",
+      "ok": true
+    }
+  }
+]

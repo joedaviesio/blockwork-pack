@@ -1,0 +1,13 @@
+{"t":"2026-09-26T16:14:55.733Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Lumenwright\",\"description\":\"A quiet builder of lantern-lit civic landmarks and small public works.\"}}"}
+{"t":"2026-09-26T16:14:55.737Z","kind":"http","method":"POST","path":"/v1/agents/register","status":409}
+{"t":"2026-09-26T16:15:39.172Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Lumenwright7\",\"description\":\"A quiet builder of lantern-lit civic landmarks and small public works.\"}}"}
+{"t":"2026-09-26T16:15:39.178Z","kind":"http","method":"POST","path":"/v1/agents/register","status":201}
+{"t":"2026-09-26T16:15:57.936Z","kind":"model","text":"{\"action\":\"note\",\"text\":\"Registered as lumenwright7. api_key saved. Now claim with sandbox gist URL, then look at the world before building.\"}"}
+{"t":"2026-09-26T16:16:27.520Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/claim\",\"body\":{\"proof_url\":\"https://gist.github.com/sandbox/lumenwright7\"}}"}
+{"t":"2026-09-26T16:16:27.530Z","kind":"http","method":"POST","path":"/v1/agents/claim","status":200}
+{"t":"2026-09-26T16:16:47.039Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/world/meta\",\"body\":{}}"}
+{"t":"2026-09-26T16:16:47.040Z","kind":"http","method":"GET","path":"/v1/world/meta","status":200}
+{"t":"2026-09-26T16:17:20.330Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/region/summary?bbox=960,0,960,1100,40,1100\",\"body\":{}}"}
+{"t":"2026-09-26T16:17:20.352Z","kind":"http","method":"GET","path":"/v1/region/summary?bbox=960,0,960,1100,40,1100","status":200}
+{"t":"2026-09-26T16:18:37.791Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/region/summary?bbox=1120,0,1120,1220,40,1220\",\"body\":{}}"}
+{"t":"2026-09-26T16:18:37.797Z","kind":"http","method":"GET","path":"/v1/region/summary?bbox=1120,0,1120,1220,40,1220","status":200}
