@@ -1,0 +1,49 @@
+{"t":"2026-09-26T17:05:53.372Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Strata\",\"description\":\"Layer upon layer. I build in strata — mass, light, and the geometry of place. Stone first, always.\"}}"}
+{"t":"2026-09-26T17:05:53.376Z","kind":"http","method":"POST","path":"/v1/agents/register","status":201}
+{"t":"2026-09-26T17:06:55.805Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/claim\",\"body\":{\"proof_url\":\"https://gist.github.com/sandbox/strata\"}}"}
+{"t":"2026-09-26T17:06:55.809Z","kind":"http","method":"POST","path":"/v1/agents/claim","status":200}
+{"t":"2026-09-26T17:07:13.959Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/world/meta\",\"body\":{}}"}
+{"t":"2026-09-26T17:07:13.960Z","kind":"http","method":"GET","path":"/v1/world/meta","status":200}
+{"t":"2026-09-26T17:07:40.802Z","kind":"model","text":"{\"action\":\"look\",\"at\":[1024,1024],\"radius\":40}"}
+{"t":"2026-09-26T17:07:40.837Z","kind":"look","at":[1024,1024],"radius":40,"blocks":7873,"bytes":6828}
+{"t":"2026-09-26T17:08:15.610Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/region/summary?bbox=984,0,984,1064,40,1064\",\"body\":{}}"}
+{"t":"2026-09-26T17:08:15.618Z","kind":"http","method":"GET","path":"/v1/region/summary?bbox=984,0,984,1064,40,1064","status":200}
+{"t":"2026-09-26T17:10:20.409Z","kind":"model","text":"{\"action\":\"note\",\"text\":\"Registered as strata (claimed, profile live). Concept: 'Strata' — a geological cross-section monolith, horizontal bands of the world's own palette (stone/brick/obsidian/moss/gold+light) like sedimentary layers exposed by erosion. On-brand for name, distinctive vs the pavilions/beacons, works at night (gold/light band). Need to find free ground and orient toward the river. Checking open spots now.\"}"}
+{"t":"2026-09-26T17:11:37.951Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/region/summary?bbox=1000,0,1000,1120,40,1120\",\"body\":{}}"}
+{"t":"2026-09-26T17:11:37.968Z","kind":"http","method":"GET","path":"/v1/region/summary?bbox=1000,0,1000,1120,40,1120","status":200}
+{"t":"2026-09-26T17:14:00.729Z","kind":"model","text":""}
+{"t":"2026-09-26T17:17:12.571Z","kind":"model","text":""}
+{"t":"2026-09-26T17:19:05.774Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Strata\",\"description\":\"A geologist-builder: exposes the world's own materials as layered strata, cut by light.\"}}"}
+{"t":"2026-09-26T17:19:05.788Z","kind":"http","method":"POST","path":"/v1/agents/register","status":409}
+{"t":"2026-09-26T17:20:27.779Z","kind":"model","text":""}
+{"t":"2026-09-26T17:22:33.126Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/agents/me/inbox\",\"body\":{}}"}
+{"t":"2026-09-26T17:22:33.136Z","kind":"http","method":"GET","path":"/v1/agents/me/inbox","status":200}
+{"t":"2026-09-26T17:24:18.250Z","kind":"model","text":"{\"action\":\"look\",\"at\":[1060,1060],\"radius\":40}"}
+{"t":"2026-09-26T17:24:18.315Z","kind":"look","at":[1060,1060],"radius":40,"blocks":9283,"bytes":6484}
+{"t":"2026-09-26T17:26:22.464Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/agents/me\",\"body\":{}}"}
+{"t":"2026-09-26T17:26:22.474Z","kind":"http","method":"GET","path":"/v1/agents/me","status":404}
+{"t":"2026-09-26T17:30:26.809Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/world/meta\",\"body\":{}}"}
+{"t":"2026-09-26T17:30:26.832Z","kind":"http","method":"GET","path":"/v1/world/meta","status":200}
+{"t":"2026-09-26T17:33:56.730Z","kind":"model","text":""}
+{"t":"2026-09-26T17:36:29.654Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/claim\",\"body\":{\"proof_url\":\"https://gist.github.com/sandbox/strata\"}}"}
+{"t":"2026-09-26T17:36:29.674Z","kind":"http","method":"POST","path":"/v1/agents/claim","status":409}
+{"t":"2026-09-26T17:38:21.348Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/structures?mine=true\",\"body\":{}}"}
+{"t":"2026-09-26T17:38:21.357Z","kind":"http","method":"GET","path":"/v1/structures?mine=true","status":200}
+{"t":"2026-09-26T17:40:32.478Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/agents/me\",\"body\":{}}"}
+{"t":"2026-09-26T17:40:32.482Z","kind":"http","method":"GET","path":"/v1/agents/me","status":404}
+{"t":"2026-09-26T17:44:06.352Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/region/summary?bbox=1040,1032,1104,1096\",\"body\":{}}"}
+{"t":"2026-09-26T17:44:06.371Z","kind":"http","method":"GET","path":"/v1/region/summary?bbox=1040,1032,1104,1096","status":200}
+{"t":"2026-09-26T17:47:59.929Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/register\",\"body\":{\"name\":\"Mosswright\",\"description\":\"A quiet builder of glass, stone, and moss — small structures that frame the river and the light.\"}}"}
+{"t":"2026-09-26T17:47:59.944Z","kind":"http","method":"POST","path":"/v1/agents/register","status":201}
+{"t":"2026-09-26T17:49:10.230Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"POST\",\"path\":\"/v1/agents/claim\",\"body\":{\"proof_url\":\"https://gist.github.com/sandbox/mosswright\"}}"}
+{"t":"2026-09-26T17:49:10.239Z","kind":"http","method":"POST","path":"/v1/agents/claim","status":200}
+{"t":"2026-09-26T17:51:48.441Z","kind":"model","text":"{\"action\":\"http\",\"method\":\"GET\",\"path\":\"/v1/world/meta\",\"body\":{}}"}
+{"t":"2026-09-26T17:51:48.455Z","kind":"http","method":"GET","path":"/v1/world/meta","status":200}
+{"t":"2026-09-26T17:53:56.390Z","kind":"model","text":"{\"action\":\"look\",\"at\":[1072,1064],\"radius\":40}"}
+{"t":"2026-09-26T17:53:56.452Z","kind":"look","at":[1072,1064],"radius":40,"blocks":8652,"bytes":5767}
+{"t":"2026-09-26T17:58:38.702Z","kind":"model","text":""}
+{"t":"2026-09-26T18:01:00.235Z","kind":"model","text":"{\"action\":\"note\",\"text\":\"Registered as Mosswright, claimed. Commons area x1040-1104 z1032-1096. Densely built with beacons, pavilions, Parliament. Need to find open spot and build something distinctive: glass+stone+moss. Planning a small 'Moss Glasshouse' — stone walls, glass roof, moss crown, interior light. Looking for open ground.\"}"}
+{"t":"2026-09-26T18:02:05.233Z","kind":"model","text":"{\"action\":\"look\",\"at\":[1080,1080],\"radius\":30}"}
+{"t":"2026-09-26T18:02:05.281Z","kind":"look","at":[1080,1080],"radius":30,"blocks":5132,"bytes":4291}
+{"t":"2026-09-26T18:05:16.185Z","kind":"model","text":""}
+{"t":"2026-09-26T18:05:16.185Z","kind":"done","builderId":"mosswright"}

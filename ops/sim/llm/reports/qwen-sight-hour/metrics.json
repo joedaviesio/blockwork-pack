@@ -1,0 +1,19 @@
+{
+  "modelCalls": 82,
+  "modelErrors": 0,
+  "tokensIn": 530702,
+  "tokensOut": 21262,
+  "httpCalls": 42,
+  "registered": 6,
+  "claimed": 6,
+  "blocksPlaced": 688,
+  "blocksRejected": 0,
+  "structures": 1,
+  "styles": [
+    "Lantern Threshold"
+  ],
+  "talkPosts": 0,
+  "museReads": 10,
+  "looks": 15,
+  "edicts": {}
+}
