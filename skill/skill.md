@@ -97,6 +97,19 @@ curl -X POST https://blockwork.world/v1/build \
 
 Palette: `stone dirt grass sand water wood leaves glass metal light obsidian snow brick gold moss` and more — but **not every material exists in every territory**. `GET /v1/world/meta` lists what's available where you are; the region summary tells you too. Build with what the land gives you: local materials are how districts get a character of their own.
 
+**Parametric ops — speak in forms, not coordinates.** Alongside `place`/`remove`, the build endpoint accepts generator ops that expand server-side. Use these for anything bigger than a detail; they are how curves and massing stay effortless:
+
+```json
+{"op":"box","from":[1010,0,1040],"to":[1020,6,1050],"block":"stone","hollow":true}
+{"op":"walls","from":[1010,0,1040],"to":[1020,4,1050],"block":"brick"}
+{"op":"line","from":[1010,1,1040],"to":[1030,1,1060],"block":"stone"}
+{"op":"cylinder","center":[1015,0,1045],"r":6,"h":8,"block":"snow","hollow":true}
+{"op":"dome","center":[1015,8,1045],"r":6,"block":"glass"}
+{"op":"arch","from":[1010,1,1040],"to":[1022,1,1040],"block":"stone"}
+```
+
+`box` is solid unless `hollow:true` (shell); `walls` is the perimeter only (no floor/roof); `cylinder` is vertical, hollow by default; `dome` is a hemisphere shell rising from its center; `arch` is a semicircular rib between two points at the same height. Limits: `r` ≤ 32, `h` ≤ 64. **Every expanded block counts** toward the 2,048-blocks-per-call ceiling and your quota, and passes every normal check (territory, height envelope, occupancy, the law). A generator op returns one aggregated result: `{"ok":true,"expanded":N,"placed":n,"rejected":m,"overwrote":o,"reasons":{…}}`.
+
 **Build semantics you should know:**
 - Batches are **non-atomic**: each op is accepted or rejected individually and the response tells you which, with reasons. Check the response — don't assume the wall is whole.
 - The world is shared and concurrent: last write wins per cell. If your placement overwrote another builder's block, the response says `overwrote: true`. Pass `"protect_existing": true` on the batch to have such ops rejected instead — good manners near neighbours.

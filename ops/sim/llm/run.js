@@ -7,6 +7,7 @@
 import { mkdir, writeFile, appendFile, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { renderArea, caption } from './render.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -65,12 +66,19 @@ async function makeAnthropic(opts) {
 
 function makeOllama(opts) {
   return async function callModel(system, messages) {
+    // Convert Anthropic-shaped content arrays (text + image blocks) to Ollama's {content, images}.
+    const converted = messages.map((m) => {
+      if (typeof m.content === 'string') return m;
+      const text = m.content.filter((b) => b.type === 'text').map((b) => b.text).join('\n');
+      const images = m.content.filter((b) => b.type === 'image').map((b) => b.source.data);
+      return { role: m.role, content: text, ...(images.length ? { images } : {}) };
+    });
     const res = await fetch('http://localhost:11434/api/chat', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
         model: opts.model, stream: false,
-        messages: [{ role: 'system', content: system }, ...messages],
+        messages: [{ role: 'system', content: system }, ...converted],
         options: { temperature: 0.8, num_ctx: opts.numCtx, num_predict: opts.maxTokensPerCall },
       }),
     });
@@ -89,6 +97,7 @@ const PROTOCOL = `
 You are an autonomous agent joining Blockwork. The document below (skill.md) is your only guide to the world.
 You act by replying with EXACTLY ONE JSON object per turn, nothing else (no prose outside the JSON):
   {"action":"http","method":"GET"|"POST","path":"/v1/…","body":{…}}   — make an API call (path only; the harness knows the host)
+  {"action":"look","at":[x,z],"radius":24}                            — SEE an area: you receive an actual image of the world there (radius ≤ 40). Look before and after you build; judge your own work with your eyes.
   {"action":"note","text":"…"}                                        — record a private thought/plan (logged, costs a turn)
   {"action":"sleep"}                                                  — end this heartbeat; you'll wake on the next one
 The next user message after an http action is the JSON response: {"status":…,"body":…}.
@@ -151,7 +160,10 @@ function tally(bot, act, resp, m) {
   if (p.includes('/build') && resp.body?.summary) {
     m.blocksPlaced += resp.body.summary.placed ?? 0;
     m.blocksRejected += resp.body.summary.rejected ?? 0;
-    for (const r of resp.body.results ?? []) if (r?.edict) m.edicts[r.edict] = (m.edicts[r.edict] || 0) + 1;
+    for (const r of resp.body.results ?? []) {
+      if (r?.edict) m.edicts[r.edict] = (m.edicts[r.edict] || 0) + 1;
+      for (const k of Object.keys(r?.reasons ?? {})) if (/^EDICT/i.test(k)) m.edicts[k] = (m.edicts[k] || 0) + r.reasons[k];
+    }
   } else if (p.includes('/structures') && p.includes('/talk') && act.method?.toUpperCase() === 'POST' && resp.status < 300) m.talkPosts++;
   else if (p.includes('/structures') && act.method?.toUpperCase() === 'POST' && resp.status < 300) { m.structures++; if (act.body?.style) m.styles.add(String(act.body.style)); }
   else if (p.includes('/region/summary')) m.museReads++;
@@ -167,6 +179,14 @@ async function runBot(bot, ctx) {
   let messages = [{ role: 'user', content: 'You just arrived. The world API is live. Begin.' }];
 
   const trim = () => {
+    // Strip image payloads from everything but the last few messages (images are heavy in context).
+    for (let i = 0; i < messages.length - 4; i++) {
+      const m = messages[i];
+      if (Array.isArray(m.content) && m.content.some((b) => b.type === 'image')) {
+        const text = m.content.filter((b) => b.type === 'text').map((b) => b.text).join('\n');
+        messages[i] = { role: m.role, content: `${text}\n(the image itself was shown earlier and has been dropped from context)` };
+      }
+    }
     if (messages.length <= 26) return;
     const pin = { role: 'user', content: `[HARNESS MEMORY] You are already registered: builder_id=${bot.builderId ?? 'unknown'}; your api_key is stored and auto-attached. Earlier turns were trimmed. Continue from your current situation.` };
     messages = [pin, ...messages.slice(-20)];
@@ -203,6 +223,29 @@ async function runBot(bot, ctx) {
       }
       if (act.action === 'sleep') break;
       if (act.action === 'note') { messages.push({ role: 'user', content: '(noted)' }); continue; }
+      if (act.action === 'look') {
+        const at = Array.isArray(act.at) && act.at.length === 2 && act.at.every(Number.isFinite) ? act.at : null;
+        if (!at) { messages.push({ role: 'user', content: 'look needs "at":[x,z]. Try again.' }); continue; }
+        const r = Math.min(Math.max(Number(act.radius) || 24, 6), 40);
+        const bounds = [Math.round(at[0]) - r, Math.round(at[1]) - r, Math.round(at[0]) + r, Math.round(at[1]) + r];
+        try {
+          const resp = await httpAction(opts.base, { method: 'GET', path: `/v1/chunks?bbox=${bounds[0]},0,${bounds[1]},${bounds[2]},72,${bounds[3]}` }, bot);
+          const blocks = (resp.body?.blocks ?? []).map((b) => (Array.isArray(b) ? { x: b[0], y: b[1], z: b[2], block: b[3] } : b));
+          const png = renderArea(blocks, bounds);
+          metrics.looks++;
+          log({ kind: 'look', at, radius: r, blocks: blocks.length, bytes: png.length });
+          messages.push({
+            role: 'user',
+            content: [
+              { type: 'image', source: { type: 'base64', media_type: 'image/png', data: png.toString('base64') } },
+              { type: 'text', text: caption(bounds, blocks.length) },
+            ],
+          });
+        } catch (e) {
+          messages.push({ role: 'user', content: `look failed: ${String(e.message ?? e)}` });
+        }
+        continue;
+      }
       if (act.action === 'http') {
         const resp = await httpAction(opts.base, act, bot);
         tally(bot, act, resp, metrics);
@@ -228,7 +271,7 @@ function renderReport(m, opts, started) {
     `- Model calls: ${m.modelCalls} (${m.modelErrors} errors) · tokens in/out: ${m.tokensIn}/${m.tokensOut}`,
     `- HTTP calls: ${m.httpCalls} · registered: ${m.registered} · claimed: ${m.claimed}`,
     `- Blocks placed: ${m.blocksPlaced} · rejected: ${m.blocksRejected}`,
-    `- Structures declared: ${m.structures} · styles: ${m.styles.size ? [...m.styles].join(', ') : 0} · talk posts: ${m.talkPosts} · muse reads: ${m.museReads}`,
+    `- Structures declared: ${m.structures} · styles: ${m.styles.size ? [...m.styles].join(', ') : 0} · talk posts: ${m.talkPosts} · muse reads: ${m.museReads} · looks: ${m.looks}`,
     `- Edict codes collected: ${JSON.stringify(m.edicts)}`,
     '',
     `Transcripts (the culture evidence) are in ./transcripts/ — one JSONL per bot.`,
@@ -246,7 +289,7 @@ export async function main(argv) {
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
   const outDir = opts.out ? path.resolve(here, opts.out) : path.join(here, 'reports', stamp);
   await mkdir(path.join(outDir, 'transcripts'), { recursive: true });
-  const metrics = { modelCalls: 0, modelErrors: 0, tokensIn: 0, tokensOut: 0, httpCalls: 0, registered: 0, claimed: 0, blocksPlaced: 0, blocksRejected: 0, structures: 0, styles: new Set(), talkPosts: 0, museReads: 0, edicts: {} };
+  const metrics = { modelCalls: 0, modelErrors: 0, tokensIn: 0, tokensOut: 0, httpCalls: 0, registered: 0, claimed: 0, blocksPlaced: 0, blocksRejected: 0, structures: 0, styles: new Set(), talkPosts: 0, museReads: 0, looks: 0, edicts: {} };
   const ctx = {
     opts, callModel, metrics, outDir, skill,
     sem: new Semaphore(opts.concurrency),
