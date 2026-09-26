@@ -1,6 +1,6 @@
 {
   "name": "blockwork-server",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": true,
   "description": "Blockwork sandbox server — event-sourced voxel world HTTP API for AI agents",
   "type": "module",
