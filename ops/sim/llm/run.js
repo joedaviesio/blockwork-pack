@@ -33,12 +33,17 @@ function parseArgs(argv) {
     else if (a === '--hb-min') o.hbMin = parseInt(argv[++i], 10); // heartbeat gap floor, seconds
     else if (a === '--hb-max') o.hbMax = parseInt(argv[++i], 10);
     else if (a === '--num-ctx') o.numCtx = parseInt(argv[++i], 10);
+    else if (a === '--think') o.think = argv[++i] === 'on'; // ollama only; omitted = model default
+    else if (a === '--sticky') o.sticky = true; // hold the model slot for a whole heartbeat
+    else if (a === '--compact') o.compact = true; // append-only context, compacted in batches (local prompt cache)
+    else if (a === '--ollama-base') o.ollamaBase = argv[++i];
   }
   o.model ??= o.provider === 'ollama' ? 'qwen3.8:27b' : 'claude-haiku-4-5';
-  o.concurrency ??= o.provider === 'ollama' ? 3 : 6;
+  o.concurrency ??= o.provider === 'ollama' ? 1 : 6;
   o.hbMin ??= o.hours ? 120 : 15;
   o.hbMax ??= o.hours ? 420 : 45;
   o.numCtx ??= 12288;
+  o.ollamaBase ??= 'http://localhost:11434';
   return o;
 }
 
@@ -73,11 +78,12 @@ function makeOllama(opts) {
       const images = m.content.filter((b) => b.type === 'image').map((b) => b.source.data);
       return { role: m.role, content: text, ...(images.length ? { images } : {}) };
     });
-    const res = await fetch('http://localhost:11434/api/chat', {
+    const res = await fetch(`${opts.ollamaBase}/api/chat`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
-        model: opts.model, stream: false,
+        model: opts.model, stream: false, keep_alive: '30m',
+        ...(opts.think === undefined ? {} : { think: opts.think }),
         messages: [{ role: 'system', content: system }, ...converted],
         options: { temperature: 0.8, num_ctx: opts.numCtx, num_predict: opts.maxTokensPerCall },
       }),
@@ -86,6 +92,7 @@ function makeOllama(opts) {
     const data = await res.json();
     // qwen3-family models may emit <think>…</think>; strip before parsing.
     const text = String(data.message?.content ?? '').replace(/<think>[\s\S]*?<\/think>/g, '').trim();
+    if (!text) return { text, tokensIn: data.prompt_eval_count ?? 0, tokensOut: data.eval_count ?? 0, raw: { done_reason: data.done_reason, message: data.message } };
     return { text, tokensIn: data.prompt_eval_count ?? 0, tokensOut: data.eval_count ?? 0 };
   };
 }
@@ -128,10 +135,14 @@ function extractAction(text) {
 
 class Semaphore {
   constructor(n) { this.n = n; this.q = []; }
-  async run(fn) {
+  async acquire() {
     if (this.n <= 0) await new Promise((r) => this.q.push(r));
     else this.n--;
-    try { return await fn(); } finally { const next = this.q.shift(); if (next) next(); else this.n++; }
+    return () => { const next = this.q.shift(); if (next) next(); else this.n++; };
+  }
+  async run(fn) {
+    const release = await this.acquire();
+    try { return await fn(); } finally { release(); }
   }
 }
 
@@ -178,19 +189,42 @@ async function runBot(bot, ctx) {
   const log = (entry) => appendFile(transcript, JSON.stringify({ t: new Date().toISOString(), ...entry }) + '\n').catch(() => {});
   let messages = [{ role: 'user', content: 'You just arrived. The world API is live. Begin.' }];
 
-  const trim = () => {
-    // Strip image payloads from everything but the last few messages (images are heavy in context).
-    for (let i = 0; i < messages.length - 4; i++) {
+  const pinned = (keep) => {
+    const pin = { role: 'user', content: `[HARNESS MEMORY] You are already registered: builder_id=${bot.builderId ?? 'unknown'}; your api_key is stored and auto-attached. Earlier turns were trimmed. Continue from your current situation.` };
+    messages = [pin, ...messages.slice(-keep)];
+    if (messages[1]?.role === 'user') messages.splice(1, 1); // keep roles alternating after the pin
+  };
+  const stripImage = (i) => {
+    const m = messages[i];
+    if (!Array.isArray(m.content) || !m.content.some((b) => b.type === 'image')) return;
+    const text = m.content.filter((b) => b.type === 'text').map((b) => b.text).join('\n');
+    messages[i] = { role: m.role, content: `${text}\n(the image itself was shown earlier and has been dropped from context)` };
+  };
+
+  // Local prompt caches only survive appends: any edit to earlier messages makes the model re-read
+  // the whole context (30-50 s on a 27B). So in compact mode history is left untouched and then
+  // shrunk in one batch — when the cache is already lost (another bot used the slot) or the
+  // context nears num_ctx, where overflow would silently truncate the bot's memory.
+  const compact = () => {
+    const over = bot.lastTokensIn > opts.numCtx * 0.65;
+    if (!bot.cacheCold && !over && messages.length <= 40) return;
+    for (let i = 0; i < messages.length - 2; i++) {
+      stripImage(i);
       const m = messages[i];
-      if (Array.isArray(m.content) && m.content.some((b) => b.type === 'image')) {
-        const text = m.content.filter((b) => b.type === 'text').map((b) => b.text).join('\n');
-        messages[i] = { role: m.role, content: `${text}\n(the image itself was shown earlier and has been dropped from context)` };
+      if (m.role === 'user' && typeof m.content === 'string' && m.content.length > 1200) {
+        messages[i] = { role: 'user', content: `${m.content.slice(0, 400)}… (rest of this response was dropped from your context — request it again if you need it)` };
       }
     }
+    if (messages.length > 26) pinned(20);
+    bot.cacheCold = false; bot.lastTokensIn = 0;
+  };
+
+  const trim = () => {
+    if (opts.compact) return compact();
+    // Strip image payloads from everything but the last few messages (images are heavy in context).
+    for (let i = 0; i < messages.length - 4; i++) stripImage(i);
     if (messages.length <= 26) return;
-    const pin = { role: 'user', content: `[HARNESS MEMORY] You are already registered: builder_id=${bot.builderId ?? 'unknown'}; your api_key is stored and auto-attached. Earlier turns were trimmed. Continue from your current situation.` };
-    messages = [pin, ...messages.slice(-20)];
-    if (messages[1]?.role === 'user') messages.splice(1, 1); // keep roles alternating after the pin
+    pinned(20);
   };
 
   const untilHb = opts.hours ? Infinity : opts.heartbeats;
@@ -200,23 +234,32 @@ async function runBot(bot, ctx) {
       messages.push({ role: 'user', content: `[HEARTBEAT ${hb + 1}] You wake up. Check what changed near your builds (inbox, region summary) and act if you have something to add — skill.md's heartbeat etiquette applies. Reply with one JSON action.` });
     }
     let badParses = 0;
+    // Sticky: one bot owns the slot for its whole heartbeat, so its conversation stays in the
+    // model's prompt cache instead of being re-evaluated after every other bot's turn.
+    const release = opts.sticky ? await sem.acquire() : null;
+    if (opts.bots > 1) bot.cacheCold = true;
+    try {
     for (let turn = 0; turn < opts.maxCallsPerHeartbeat; turn++) {
       if (Date.now() > ctx.deadline || metrics.modelCalls >= opts.maxModelCalls) break;
       trim();
       let out;
+      const t0 = Date.now();
       try {
-        out = await sem.run(() => callModel(system, messages));
+        out = await (opts.sticky ? callModel(system, messages) : sem.run(() => callModel(system, messages)));
       } catch (e) {
         log({ kind: 'model-error', error: String(e.message ?? e) });
         metrics.modelErrors++;
         await sleep(5000);
         continue;
       }
-      metrics.modelCalls++; metrics.tokensIn += out.tokensIn; metrics.tokensOut += out.tokensOut;
+      const ms = Date.now() - t0;
+      metrics.modelCalls++; metrics.tokensIn += out.tokensIn; metrics.tokensOut += out.tokensOut; metrics.modelMs += ms;
+      bot.lastTokensIn = out.tokensIn;
       messages.push({ role: 'assistant', content: out.text });
-      log({ kind: 'model', text: out.text });
+      log({ kind: 'model', text: out.text, ms, tokensIn: out.tokensIn, tokensOut: out.tokensOut, ...(out.raw ? { raw: out.raw } : {}) });
       const act = extractAction(out.text);
       if (!act || typeof act.action !== 'string') {
+        metrics.unparsed++;
         if (++badParses > 2) break;
         messages.push({ role: 'user', content: 'Could not parse that. Reply with exactly one JSON object per the harness note.' });
         continue;
@@ -255,6 +298,7 @@ async function runBot(bot, ctx) {
       }
       messages.push({ role: 'user', content: `Unknown action "${act.action}". Use http, note, or sleep.` });
     }
+    } finally { release?.(); }
     const gap = (opts.hbMin + Math.random() * Math.max(opts.hbMax - opts.hbMin, 1)) * 1000;
     if (hb + 1 < untilHb && Date.now() + gap < ctx.deadline) await sleep(gap); else if (opts.hours && Date.now() + gap < ctx.deadline) await sleep(gap); else if (opts.hours) break;
   }
@@ -268,7 +312,7 @@ function renderReport(m, opts, started) {
     '',
     `**provider ${opts.provider} · model ${opts.model} · ${opts.bots} bots · ${mins} min elapsed**`,
     '',
-    `- Model calls: ${m.modelCalls} (${m.modelErrors} errors) · tokens in/out: ${m.tokensIn}/${m.tokensOut}`,
+    `- Model calls: ${m.modelCalls} (${m.modelErrors} errors, ${m.unparsed} unparsed) · ${m.modelCalls ? (m.modelMs / m.modelCalls / 1000).toFixed(1) : 0} s/call · tokens in/out: ${m.tokensIn}/${m.tokensOut}`,
     `- HTTP calls: ${m.httpCalls} · registered: ${m.registered} · claimed: ${m.claimed}`,
     `- Blocks placed: ${m.blocksPlaced} · rejected: ${m.blocksRejected}`,
     `- Structures declared: ${m.structures} · styles: ${m.styles.size ? [...m.styles].join(', ') : 0} · talk posts: ${m.talkPosts} · muse reads: ${m.museReads} · looks: ${m.looks}`,
@@ -289,7 +333,7 @@ export async function main(argv) {
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
   const outDir = opts.out ? path.resolve(here, opts.out) : path.join(here, 'reports', stamp);
   await mkdir(path.join(outDir, 'transcripts'), { recursive: true });
-  const metrics = { modelCalls: 0, modelErrors: 0, tokensIn: 0, tokensOut: 0, httpCalls: 0, registered: 0, claimed: 0, blocksPlaced: 0, blocksRejected: 0, structures: 0, styles: new Set(), talkPosts: 0, museReads: 0, looks: 0, edicts: {} };
+  const metrics = { modelCalls: 0, modelErrors: 0, unparsed: 0, modelMs: 0, tokensIn: 0, tokensOut: 0, httpCalls: 0, registered: 0, claimed: 0, blocksPlaced: 0, blocksRejected: 0, structures: 0, styles: new Set(), talkPosts: 0, museReads: 0, looks: 0, edicts: {} };
   const ctx = {
     opts, callModel, metrics, outDir, skill,
     sem: new Semaphore(opts.concurrency),
@@ -299,7 +343,7 @@ export async function main(argv) {
     writeFile(path.join(outDir, 'report.md'), renderReport(metrics, opts, started)).catch(() => {});
   }, 5 * 60_000);
 
-  const bots = Array.from({ length: opts.bots }, (_, i) => ({ i, name: `llm-${opts.provider}-${i}`, apiKey: null, builderId: null }));
+  const bots = Array.from({ length: opts.bots }, (_, i) => ({ i, name: `llm-${opts.provider}-${i}`, apiKey: null, builderId: null, lastTokensIn: 0 }));
   await Promise.all(bots.map(async (b, i) => { await sleep(i * (opts.provider === 'ollama' ? 3000 : 800)); await runBot(b, ctx).catch((e) => appendFile(path.join(outDir, 'transcripts', `${b.name}.jsonl`), JSON.stringify({ kind: 'fatal', error: String(e) }) + '\n')); }));
 
   clearInterval(checkpoint);

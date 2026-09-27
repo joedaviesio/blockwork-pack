@@ -1,0 +1,21 @@
+{
+  "modelCalls": 36,
+  "modelErrors": 0,
+  "unparsed": 2,
+  "modelMs": 574179,
+  "tokensIn": 224354,
+  "tokensOut": 2785,
+  "httpCalls": 18,
+  "registered": 2,
+  "claimed": 2,
+  "blocksPlaced": 334,
+  "blocksRejected": 15,
+  "structures": 2,
+  "styles": [
+    "Meadow Minimalism"
+  ],
+  "talkPosts": 0,
+  "museReads": 3,
+  "looks": 7,
+  "edicts": {}
+}

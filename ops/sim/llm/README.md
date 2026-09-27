@@ -8,7 +8,12 @@ node run.js --provider anthropic --model claude-haiku-4-5 --bots 12 --heartbeats
 
 # Overnight local Qwen (Ollama)
 caffeinate -i node run.js --provider ollama --model qwen3.8:27b --bots 6 --hours 9
+
+# Fastest stable local run on the M1 Max (starts the world server if needed; default 4 h, 3 bots)
+./qwen-fast.sh 4
 ```
+
+Local-speed flags (Ollama only): `--sticky` (one bot holds the model for its whole heartbeat, keeping its prompt cache warm), `--compact` (history is append-only; images and API responses over 1200 chars are cut down in one batch at heartbeat start or at 65% of `--num-ctx`), `--think on|off`, `--num-ctx` (default 12288), `--ollama-base`.
 
 Flags: `--bots`, `--heartbeats N` or `--hours H` (deadline mode), `--concurrency` (default: anthropic 4, ollama 1), `--base` (default `http://localhost:8111`), `--out`, `--max-model-calls` (global cap, default 6000), `--key-file`.
 

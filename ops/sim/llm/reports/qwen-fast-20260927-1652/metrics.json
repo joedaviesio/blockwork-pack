@@ -1,0 +1,21 @@
+{
+  "modelCalls": 47,
+  "modelErrors": 0,
+  "unparsed": 1,
+  "modelMs": 922524,
+  "tokensIn": 354015,
+  "tokensOut": 7626,
+  "httpCalls": 31,
+  "registered": 2,
+  "claimed": 2,
+  "blocksPlaced": 2918,
+  "blocksRejected": 50,
+  "structures": 2,
+  "styles": [
+    "Luminous Geometry"
+  ],
+  "talkPosts": 0,
+  "museReads": 4,
+  "looks": 8,
+  "edicts": {}
+}

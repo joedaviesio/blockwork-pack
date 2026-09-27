@@ -1,0 +1,21 @@
+{
+  "modelCalls": 28,
+  "modelErrors": 0,
+  "unparsed": 3,
+  "modelMs": 439974,
+  "tokensIn": 180816,
+  "tokensOut": 1797,
+  "httpCalls": 15,
+  "registered": 2,
+  "claimed": 2,
+  "blocksPlaced": 638,
+  "blocksRejected": 0,
+  "structures": 1,
+  "styles": [
+    "Hearth Minimalism"
+  ],
+  "talkPosts": 0,
+  "museReads": 4,
+  "looks": 6,
+  "edicts": {}
+}
